@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nosotros - Materiales Ferreteros La Costa - MAFERCO">
+
+    <title>Nosotros</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom CSS and JS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body style="background-color: #EFEFEF;">
+
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg nav fixed-top">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-text ms-2">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="productos-servicios.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="acerca-de.html">Acerca de</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Fin Navbar -->
+
+        <div class="banner">
+            <div class="container">
+                <h1>Contacto</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="text-container">
+        <p style="text-align: center;">¿Tienes alguna consulta? Completa el siguiente formulario y nuestro equipo se
+            pondrá en contacto contigo lo
+            antes posible para ofrecerte una atención personalizada. Nos importa entender tus necesidades y brindarte
+            soluciones adecuadas. Ya sea que necesites asesoramiento sobre productos, disponibilidad o cualquier otra
+            pregunta, estamos aquí para ayudarte.
+        </p>
+        <p style="text-align: center;">También puedes llamarnos a nuestros teléfonos: <b>2653-9000</b> y
+            <b>8982-5000</b>, o escribirnos al correo: <i>info@mafercocr.com</i>.
+            ¡Tu satisfacción es nuestra prioridad y estamos listos para asistirte en todo lo que necesites!
+        </p>
+    </div>
+
+    <div class="form-container">
+        <section class="form">
+            <form action="https://formsubmit.co/letsbidonlineteam@gmail.com" method="POST">
+                <h3>Formulario</h3>
+                <input class="controls" type="text" name="name" placeholder="Ingrese su nombre" required>
+                <input class="controls" type="text" name="phone" placeholder="Ingrese su número telefónico" required>
+                <input class="controls" type="email" name="email" placeholder="Ingrese su correo electrónico" required>
+
+                <fieldset class="controls">
+                    <legend>Preferencia de contacto</legend>
+                    <div class="preferred-contact">
+                        <label><input type="radio" name="contact_method" value="preferred-phone" required> Teléfono</label>
+                        <label><input type="radio" name="contact_method" value="preferred-email" required> Correo</label>
+                    </div>
+                </fieldset>
+
+                <input class="controls" type="text" name="request" id="request" placeholder="Ingrese su solicitud" required>
+                
+                <button class="button" type="submit">Enviar</button>
+
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/contacto.html">
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+        </section>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-item">
+
+            <div class="box">
+                <h3>Contacto</h3>
+                <div class="contact">
+                    <div class="contact-item">
+                        <img src="img/iconos/telefono.png" alt="Icono de teléfono">
+                        <span>+506 26539000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="img/iconos/whatsapp.png" alt="Icono de WhatsApp">
+                        <span>+506 89825000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="img/iconos/correo.png" alt="Icono de correo electrónico">
+                        <span style="margin-left: 5px;">info@mafercocr.com</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box">
+                <h3>Síguenos</h3>
+                <div class="socials">
+                    <a href="https://www.facebook.com/MaterialesFerreterosLaCosta/" target="_blank"><img
+                            src="img/iconos/facebook.png" alt="Enlace a Facebook"></a>
+                    <a href="https://www.instagram.com/ferreteriamaferco/" target="_blank"><img
+                            src="img/iconos/instagram.png" alt="Enlace a Instagram"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Ubicación</h3>
+                <p>Encuéntranos 150 metros al este de la bomba de Huacas, Guanacaste</p>
+
+                <a href="https://www.google.com/maps/place/MAFERCO/@10.1535928,-85.6342019,9z/data=!4m6!3m5!1s0x8f9e31c51eeaf041:0xa7167a04888ff225!8m2!3d10.3686119!4d-85.7652868!16s%2Fg%2F11s_t2xscb!5m1!1e2?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D"
+                    class="btn-1" target="_blank">Ver en mapa
+                </a>
+            </div>
+
+        </div>
+        <hr>
+        <div class="rights">
+            <p>&copy; 2024 Materiales Ferreteros La Costa - MAFERCO.<br>Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- Fin Footer -->
+
+</body>
+
+</html>

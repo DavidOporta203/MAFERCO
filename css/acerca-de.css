@@ -1,0 +1,132 @@
+.banner {
+    background-color: #E7AD3B;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 0px;
+}
+
+h1 {
+    font-size: 100px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+a {
+    font-size: 20px;
+    color: #424242;
+}
+
+
+
+
+
+.developer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+
+.developer {
+    width: 80%;
+    background-color: #FFFFFF;
+    display: flex;
+}
+
+.developer-image{
+    background-image: url(../img/developer/picture.png);
+    height: 600px;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    aspect-ratio: 16/9;
+
+    transition: transform 0.5s ease;
+}
+
+.developer-image:hover {
+    transform: scale(1.05); /* Aumenta el tamaño un 5% */
+}
+
+.developer-text{
+    width: 50%;
+    padding: 15px 15px 15px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.developer-text h1{
+    font-size: 70px;
+    color: black;
+}
+
+.developer-text p a:hover{
+    color: #2F56A1;
+}
+
+
+.utn {
+    display: block; 
+    margin: 0 auto; 
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+/*-------------------- Animaciones -------------------- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*-------------------- Animaciones -------------------- */
+
+@media (max-width: 1050px){
+    h1 {
+        font-size: 80px;
+    }
+
+    .developer-container {
+        padding: 20px;
+
+    }
+
+    .developer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .developer-image{
+        height: 600px;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    
+    .developer-text{
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .developer-text h1{
+        font-size: 50px;
+        color: black;
+    }
+}

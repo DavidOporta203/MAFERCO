@@ -1,0 +1,133 @@
+/* ------------------- Estilos globales -------------------*/
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+h2{
+    font-size: 80px;
+}
+
+p {
+    font-size: 20px;
+    color: #424242;
+    margin-bottom: 35px;
+}
+
+span {
+    font-size: 22px;
+    color: #424242;
+}
+
+.btn-1 {
+    padding: 13px 30px;
+    background-color: #2F56A1;
+    color: #FFFFFF;
+    border-radius: 25px;
+    font-size: 18px;
+}
+
+.btn-1:hover {
+    background-color: #2F4882;
+}
+
+/* ------------------- Estilos nav -------------------*/
+
+.nav{
+    background-color: #EFEFEF;
+}
+
+.nav-link {
+    display: block;
+    text-align: center;
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+}
+
+.nav ul li a{
+    font-size: 18px;
+    padding: 25px;
+    color: #3F3F3F;
+    font-weight: 600;
+}
+
+.nav ul li a:hover{
+    color: #fff;
+}
+
+/* ------------------- Estilos footer -------------------*/
+.footer{
+    width: 100%;
+    background-color: #EFEFEF;
+}
+
+.footer-item{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0;
+}
+
+.box{
+    text-align: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.contact-item {
+    display: flex; /* Alinea la imagen y el texto en fila */
+    align-items: center; /* Centra verticalmente */
+    justify-content: flex-start; /* Alinea a la izquierda */
+    margin-bottom: 10px; /* Espacio entre los elementos */
+}
+
+.contact-item img {
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.socials a{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+}
+
+.rights{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+/* ------------------- Media Query -------------------*/
+
+@media (min-width: 768px) {
+    .navbar-nav .nav-item {
+        margin: 0 30px;
+    }
+}
+
+@media (max-width: 850px) {
+    .footer-item{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0;
+    }
+}

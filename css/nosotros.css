@@ -1,0 +1,158 @@
+.banner {
+    background-color: #E7AD3B;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 0px;
+}
+
+h1 {
+    font-size: 100px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+h2{
+    font-size: 60px;
+    color: #424242;
+}
+
+p{
+    margin-top: 20px;
+    color: #424242;
+}
+
+.description{
+    font-size: 30px;
+}
+
+.nosotros-text{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.image-slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+}
+
+.image-slider{
+    width: 90%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.image-slider img{
+    width: 10%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.68);
+    transition: all ease-in-out 0.5s;
+}
+
+.image-slider img:hover{
+    width: 25%;
+}
+
+.historia {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)),
+        url(../img/ferreteria.jpg) center bottom no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 200px 0;
+}
+
+.historia-content{
+	text-align: center;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.general{
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.valores {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)),
+        url(../img/banner2.png) center bottom no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 200px 0;
+    text-align: center;
+}
+
+.valores-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.valor {
+    flex: 1 1 200px; /* Asegurar que los elementos ocupen al menos 200px de ancho, pero se ajusten si hay más espacio */
+    max-width: 300px; /* Limitar el tamaño máximo de cada valor */
+    box-sizing: border-box; /* Para incluir el padding y el borde dentro del ancho total */
+}
+
+.valor h3{
+    color: #F9FAFC;
+}
+
+.valor p{
+    color: #F9FAFC;
+}
+
+@media (max-width: 1300px) {
+    h1 {
+        font-size: 80px;
+    }
+
+    h2{
+        font-size: 40px;
+        color: #424242;
+    }
+
+    .description{
+        font-size: 25px;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    .historia-content{
+        width: 90%;
+    }
+
+    .general{
+        width: 85%;
+    }
+}
+
+@media (max-width: 500px){
+    .image-slider-container {
+        display: none;
+    }
+
+    .nosotros-text{
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
