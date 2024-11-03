@@ -178,15 +178,7 @@
         width: 250px;
         height: 250px;
     }
-
-    .footer-item{
-        width: 90%;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 30px;
-        padding: 35px 0;
-    }
 }
-
 
 @media (min-width: 851px) and (max-width: 1500px) {
     .banner {
@@ -214,5 +206,3 @@
         line-height: 60px;
     }
 }
-
-

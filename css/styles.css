@@ -1,5 +1,20 @@
-/* ------------------- Estilos globales -------------------*/
+/* ------------------- Colores ------------------- */
+:root {
+    --background-color: white;
+    --text-title-color: #053D4E;
+    --text-color: #32363B;
+    --icon-color: #32363B;
+    --icon-menu-color: #707780;
+    --menu-color: #707780;
 
+    --text-selected-color: #355CC0;
+    --background-selected: #EBF0FF;
+    --background-hover: #F7F9FA;
+
+    --border-color: #E6E9ED;
+}
+
+/* ------------------- Estilos globales ------------------- */
 @font-face {
     font-family: 'Poppins';
     src: url('../fonts/Poppins-Regular.ttf') format('truetype');
@@ -26,11 +41,6 @@ p {
     margin-bottom: 35px;
 }
 
-span {
-    font-size: 22px;
-    color: #424242;
-}
-
 .btn-1 {
     padding: 13px 30px;
     background-color: #2F56A1;
@@ -43,30 +53,148 @@ span {
     background-color: #2F4882;
 }
 
-/* ------------------- Estilos nav -------------------*/
-
-.nav{
-    background-color: #EFEFEF;
+/* ------------------- Header ------------------- */
+header {
+    z-index: 200;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.45rem 2rem 1.45rem 1.27rem;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    background-color: var(--background-color);
+    top: 0;
+    left: 0;
 }
 
-.nav-link {
-    display: block;
-    text-align: center;
-    white-space: normal; /* Permite que el texto se divida en varias líneas */
+/* ------------------- Left section ------------------- */
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
 }
 
-.nav ul li a{
-    font-size: 18px;
-    padding: 25px;
-    color: #3F3F3F;
-    font-weight: 600;
+/* ------------------- Menu ------------------- */
+.menu-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
-.nav ul li a:hover{
-    color: #fff;
+.menu {
+    width: 1.5rem;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* ------------------- Estilos footer -------------------*/
+.menu div {
+    width: 100%;
+    height: 0.15rem;
+    background-color: var(--menu-color);
+    transition: all 0.2s ease;
+}
+
+.menu.menu-toggle div:first-child {
+    width: 40%;
+    transform: rotate(-35deg) translate(-30%, 175%);
+}
+
+.menu.menu-toggle div:last-child {
+    width: 40%;
+    transform: rotate(35deg) translate(-30%, -160%);
+}
+
+/* ------------------- Brand ------------------- */
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.brand .name {
+    font-size: 1.5rem;
+    font-weight: 750;
+    color: var(--text-title-color);
+}
+
+/* ------------------- Right section ------------------- */
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.right img {
+    width: 1.5rem;
+    margin: 0.5rem;
+}
+
+.right .icon {
+    width: 2.1rem;
+    border-radius: 50%;
+}
+
+.right .icon:hover {
+    cursor: pointer;
+}
+
+/* ------------------- Sidebar ------------------- */
+.sidebar {
+    margin-top: 6rem;
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    background-color: var(--background-color);
+    transition: width 0.5s ease;
+}
+
+.sidebar ul {
+    padding: 0;
+}
+
+.sidebar.menu-toggle {
+    width: 18.75rem;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0.9rem 0.7rem;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.sidebar a:hover {
+    background-color: var(--background-hover);
+}
+
+.sidebar a.selected {
+    color: var(--text-selected-color);
+    background-color: var(--background-selected);
+}
+
+.sidebar img {
+    width: 1.6rem;
+}
+
+/* ------------------- Footer ------------------- */
 .footer{
     width: 100%;
     background-color: #EFEFEF;
@@ -115,14 +243,12 @@ span {
     padding-bottom: 5px;
 }
 
-/* ------------------- Media Query -------------------*/
-
-@media (min-width: 768px) {
-    .navbar-nav .nav-item {
-        margin: 0 30px;
-    }
+.medios-contacto {
+    font-size: 22px;
+    color: #424242;
 }
 
+/* ------------------- Responsive ------------------- */
 @media (max-width: 850px) {
     .footer-item{
         width: 90%;

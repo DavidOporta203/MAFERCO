@@ -15,56 +15,82 @@
     <!-- Custom CSS and JS -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/productos-servicios.css">
-    <script src="js/main.js"></script>
 </head>
 
 <body>
-
     <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg nav fixed-top">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-text ms-2">Menú</span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="nosotros.html">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blog.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="preguntas-frecuentes.html">Preguntas Frecuentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="acerca-de.html">Acerca de</a>
-                        </li>
-                    </ul>
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
             </div>
-        </nav>
-        <!-- Fin Navbar -->
-
-        <div class="banner">
-            <div class="container">
-                <h1>Productos y Servicios</h1>
+            <div class="brand">
+                <span class="name">MAFERCO</span>
             </div>
         </div>
+        <div class="right">
+            <img src="img/iconos/carrito.svg" alt="Carrito de compras" class="icon">
+            <img src="img/iconos/usuario.svg" alt="Inicio de sesión" class="icon">
+        </div>
     </header>
+
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <img src="img/iconos/inicio.svg" alt="Página de inicio">
+                        <span>Página de Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="nosotros.html">
+                        <img src="img/iconos/nosotros.svg" alt="Página nosotros">
+                        <span>Nosotros</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="selected">
+                        <img src="img/iconos/productos.svg" alt="Página de productos y servicios">
+                        <span>Productos y servicios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html">
+                        <img src="img/iconos/blog.svg" alt="Página blog">
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contacto.html">
+                        <img src="img/iconos/contacto.svg" alt="Página contacto">
+                        <span>Contacto</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="preguntas-frecuentes.html">
+                        <img src="img/iconos/preguntas-frecuentes.svg" alt="Página preguntas frecuentes">
+                        <span>Preguntas frecuentes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="acerca-de.html">
+                        <img src="img/iconos/acerca-de.svg" alt="Página acerca de">
+                        <span>Acerca de</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <h1>Productos y Servicios</h1>
+        </div>
+    </div>
 
     <div class="products">
         <div class="container">
@@ -100,7 +126,7 @@
             <div class="product-item">
                 <img src="img/products/product05.jpg" alt="">
             </div>
-            
+
             <div class="product-item">
                 <img src="img/products/product06.jpg" alt="">
             </div>
@@ -156,7 +182,7 @@
             <div class="product-item">
                 <img src="img/products/product19.jpg" alt="">
             </div>
-            
+
         </div>
 
 
@@ -172,7 +198,6 @@
 
 
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-item">
 
@@ -181,15 +206,17 @@
                 <div class="contact">
                     <div class="contact-item">
                         <img src="img/iconos/telefono.png" alt="Icono de teléfono">
-                        <span>+506 26539000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span class="medios-contacto">+506
+                            26539000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
                     <div class="contact-item">
                         <img src="img/iconos/whatsapp.png" alt="Icono de WhatsApp">
-                        <span>+506 89825000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span class="medios-contacto">+506
+                            89825000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
                     <div class="contact-item">
                         <img src="img/iconos/correo.png" alt="Icono de correo electrónico">
-                        <span style="margin-left: 5px;">info@mafercocr.com</span>
+                        <span class="medios-contacto" style="margin-left: 5px;">info@mafercocr.com</span>
                     </div>
                 </div>
 
@@ -220,8 +247,9 @@
             <p>&copy; 2024 Materiales Ferreteros La Costa - MAFERCO.<br>Todos los derechos reservados.</p>
         </div>
     </footer>
-    <!-- Fin Footer -->
 
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
