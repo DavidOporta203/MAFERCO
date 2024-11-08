@@ -8,6 +8,12 @@ menu.addEventListener('click', ()=>{
     main.classList.toggle('menu-toggle');
 })
 
+//Listener para el botón flotante
+document.getElementById('toggleButton').addEventListener('click', function() {
+    const socialIcons = document.getElementById('socialIcons');
+    socialIcons.classList.toggle('show');
+});
+
 //Listener para realizar animación del apartado partner
 window.addEventListener('scroll', () => {
     const partnerItems = document.querySelectorAll('.partner-item');

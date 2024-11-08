@@ -194,6 +194,127 @@ header {
     width: 1.6rem;
 }
 
+/* ------------------- Estilos partner -------------------*/
+.flotante {
+    position: fixed;
+    bottom: 1px;
+    right: 1px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+  }
+  
+.flotantesContainer {
+    width: 45px;
+    height: 45px;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: 0.3s;
+}
+
+.toggle-button {
+    width: 45px;
+    height: 45px;
+    background-color: #4EAECE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.8);
+}
+
+.social-icons {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.socialContainer {
+    transition: transform 0.3s;
+}
+
+.socialContainer:hover {
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+.add-icon {
+    width: 20px;
+    fill: white;
+}
+
+.show {
+    display: flex;
+}
+
+.email {
+    background-color: #0072b1;
+}
+
+.email:hover {
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+.facebook {
+    background-color: #00acee;
+}
+
+.facebook:hover {
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+.instagram {
+    background-color: #d62976;
+}
+
+.instagram:hover {
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+.telefono {
+    background-color: #4CAF50;
+}
+
+.telefono:hover {
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+.whatsapp {
+    background-color: #25d366;
+}
+
+.whatsapp:hover {
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+.socialSvg {
+    width: 20px;
+}
+  
+.socialSvg path {
+    fill: rgb(255, 255, 255);
+}
+
 /* ------------------- Footer ------------------- */
 .footer{
     width: 100%;
