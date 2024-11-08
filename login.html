@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+
+    <!-- SRC para el swal fire de -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+<body>
+    
+    <div class="container-principal">
+        <form class="formulario-login">
+            <img src="img/logo.png" alt="logo-login">
+            <p>Maferco, su mejor compra para materiales de ferretería</p>
+            
+            <div class="container">
+                <i class="fa-solid fa-envelope"></i>
+                <div class="login-container">
+                    <input type="email" class="form-control" placeholder="Usuario" id="txtUser">
+    
+                </div>
+                
+                <i class="fa-solid fa-key"></i>
+                <div class="login-container">
+                        <span class="icon-eye">
+                            <i class="fa-solid fa-eye fa-lg"></i>
+                        </span>
+                       <input type="password" class="form-control " aria-describedby="passwordHelpBlock" placeholder="Contraseña" id="txtPassword">
+                </div>
+    
+                <div class="login-button">
+                    <button type="button" id = "btnLogin" class="btn btn-warning">Ingresar</button>
+                </div>
+                <div id="loginMessage" style="color: red; margin-top: 10px;"></div>
+            </div>
+      </form>
+
+
+
+       <!-- Contenedor para el mensaje de alerta -->
+    <div id="alertContainer" class="alert-container"></div>
+    </div>
+
+
+    <script src="js/User.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.js"></script>
+    
+</body>
+</html>
