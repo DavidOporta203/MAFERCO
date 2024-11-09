@@ -40,11 +40,12 @@ h1 {
 
 .product-item {
     width: 300px;
-    height: 300px;
+    height: 500px;
     overflow: hidden;
     background: #fff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     margin: 50px;
     border-radius: 10px;
@@ -57,8 +58,44 @@ h1 {
 
 .product-item img {
     width: 100%;
-    height: auto;
+    height: 300px;
     object-fit: cover;
+}
+
+.product-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-description {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-button {
+    padding: 8px 16px;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    transition: 0.4s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.agregar {
+    background-color: #E7AD3B;
+}
+
+.product-button.agregar:hover {
+    background-color: #C88E2A;
+}
+
+.ver {
+    background-color: #2F56A1;
+}
+
+.product-button.ver:hover {
+    background-color: #2F4882;
 }
 
 @media (max-width: 1300px) {
