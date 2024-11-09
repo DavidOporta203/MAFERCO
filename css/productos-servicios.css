@@ -67,7 +67,12 @@ h1 {
     text-align: center;
 }
 
-.product-description {
+.product-title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-price {
     color: #333;
     margin-bottom: 20px;
 }
