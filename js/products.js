@@ -1,6 +1,6 @@
 // Script para la carga de productos y mostrar el modal de ver más
 $(document).ready(function(){
-    $.getJSON('../json/products.json', function(data){
+    $.getJSON('json/products.json', function(data){
         const container = $('#product-container');
 
         data.forEach(product => {

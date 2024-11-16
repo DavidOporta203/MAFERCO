@@ -56,6 +56,48 @@ window.addEventListener('scroll', () => {
     });
 });
 
+//Este efecto se aplica a la sección de pagos
+window.addEventListener('DOMContentLoaded', function() {
+    // Obtener todos los elementos que quieres animar
+    const elementos = document.querySelectorAll('.contenedor-productos, .producto-carrito, .producto-pagar, .card, .btn-pagar-carrito, h3, p');
+
+    // Agregar la clase .visible a cada uno de los elementos con un pequeño retraso
+    let delay = 0; // Empezamos sin retraso
+
+    elementos.forEach((elemento) => {
+        setTimeout(() => {
+            elemento.classList.add('visible');
+        }, delay);
+        
+        delay += 200; // Aumentar el retraso para los siguientes elementos (200ms)
+    });
+});
+
+// Función para verificar si un elemento está en la vista
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Detectar el scroll y aplicar la clase 'visible' cuando un elemento entra en la vista
+window.addEventListener('scroll', function() {
+    // Seleccionar todos los elementos que deben aparecer con scroll
+    const elementos = document.querySelectorAll('.contenedor-productos, .producto-carrito, .producto-pagar, .card, .btn-pagar-carrito, h3, p');
+    
+    // Recorrer cada elemento y verificar si está en la vista
+    elementos.forEach((elemento) => {
+        if (isElementInViewport(elemento)) {
+            elemento.classList.add('visible'); // Añadir la clase 'visible' cuando está en la vista
+        }
+    });
+});
+
+
 // Función para agregar la clase 'visible' inmediatamente al cargar la página
 function onLoad() {
     const fadeElements = document.querySelectorAll('.fade-in');

@@ -315,8 +315,30 @@ header {
     fill: rgb(255, 255, 255);
 }
 
+/* ------------------- Sección de pago ------------------- */
+
+/* Inicializa los elementos con opacidad 0 y desplazados para el efecto de deslizamiento */
+.contenedor-productos,
+.producto-carrito,
+.producto-pagar,
+.card,
+.btn-pagar-carrito,
+h3, p {
+    opacity: 0;
+    transform: translateY(20px); /* Inicia ligeramente desplazado hacia abajo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
+}
+
+/* Clase para hacer que los elementos se vuelvan visibles */
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Devuelve a su posición original */
+}
+
+
 /* ------------------- Footer ------------------- */
 .footer{
+    
     width: 100%;
     background-color: #EFEFEF;
 }
