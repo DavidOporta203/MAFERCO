@@ -40,6 +40,26 @@ window.addEventListener('scroll', () => {
     });
 });
 
+
+window.addEventListener('scroll', () => {
+    // Usamos requestAnimationFrame para optimizar la ejecución en scroll
+    window.requestAnimationFrame(() => {
+        const sliderItems = document.querySelectorAll('.container-slider'); 
+
+        sliderItems.forEach(sliderItem => {
+            const rect = sliderItem.getBoundingClientRect();
+
+            // Verifica si el elemento está dentro del área visible de la pantalla
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                sliderItem.classList.add('active'); // Agregar la clase active cuando esté en vista
+            } else {
+                sliderItem.classList.remove('active'); // Quitar la clase active cuando no esté en vista
+            }
+        });
+    });
+});
+
+
 //Listener para realizar animación del apartado products
 window.addEventListener('scroll', () => {
     const productItems = document.querySelectorAll('.product-item');
@@ -55,6 +75,7 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
 
 //Este efecto se aplica a la sección de pagos
 window.addEventListener('DOMContentLoaded', function() {
@@ -96,6 +117,11 @@ window.addEventListener('scroll', function() {
         }
     });
 });
+//aqui termina el efecto para la página de pagos//////IMPORTANTE para no perderse
+
+
+//Lógica aplicada para el carousel del INDEX
+
 
 
 // Función para agregar la clase 'visible' inmediatamente al cargar la página
