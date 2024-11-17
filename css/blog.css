@@ -26,7 +26,9 @@ h2 {
 }
 
 .sorteo img {
-    width: 600px;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
     transition: transform 0.5s ease;
 }
 
@@ -68,5 +70,38 @@ h2 {
 
     h1 {
         font-size: 80px;
+    }
+}
+
+@media (max-width: 1199px){
+    .videos {
+        flex-direction: column;
+    }
+
+    .pintura {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .pintura video {
+        max-width: 500px;
+        width: 90%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .block {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .block video {
+        max-width: 500px;
+        width: 90%;
+        height: auto;
+        object-fit: cover;
     }
 }
