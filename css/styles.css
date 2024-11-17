@@ -119,7 +119,7 @@ header {
 .brand .name {
     font-size: 1.5rem;
     font-weight: 750;
-    color: var(--text-title-color);
+    color: #002b38;
 }
 
 /* ------------------- Right section ------------------- */
@@ -366,14 +366,14 @@ h3, p {
 }
 
 .contact-item {
-    display: flex; /* Alinea la imagen y el texto en fila */
-    align-items: center; /* Centra verticalmente */
-    justify-content: flex-start; /* Alinea a la izquierda */
-    margin-bottom: 10px; /* Espacio entre los elementos */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
 
 .contact-item img {
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    margin-right: 10px;
 }
 
 .socials a{

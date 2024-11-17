@@ -22,15 +22,6 @@ let runNextAuto = setTimeout(() => {
     nextBtn.click()
 }, timeAutoNext)
 
-
-// function resetTimeAnimation() {
-//     runningTime.style.animation = 'none'
-//     runningTime.offsetHeight
-//     runningTime.style.animation = null 
-//     runningTime.style.animation = 'runningTime 7s linear 1 forwards'
-// }
-
-
 function showSlider(type) {
     let sliderItemsDom = list.querySelectorAll('.carousel .list .item')
     if(type === 'next'){
@@ -56,6 +47,3 @@ function showSlider(type) {
 
     resetTimeAnimation()
 }
-
-// Start the initial animation
-// resetTimeAnimation()
