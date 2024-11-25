@@ -199,7 +199,7 @@
 
             </div>
 
-            <div class="item" style="background-image: url(img/carrousel/interiores.jpg);">
+            <div class="item" style="background-image: url(img/carrousel/interiores1.jpg);">
 
                 <div class="content">
                     <div class="title">TU HOGAR,</div>
@@ -218,6 +218,43 @@
             <button class="next">></button>
         </div>
 
+    </div>
+
+    <div class="container-sliderprincipal">
+        <div class="container-slider">
+            <h2>Expertos en diseño de hogares</h2>
+            <p>En Maferco nos apasiona ayudar a nuestros clientes. Nos especializamos en el diseño y mantenimiento de
+                hogares, ofreciendo soluciones a medida para cada necesidad. Si tienes alguna pregunta o recomendación,
+                nuestro equipo de profesionales altamente capacitados estará encantado de brindarte el asesoramiento que
+                necesitas.
+            </p>
+            <div class="slider-wrapper">
+                <button id="prev-slide" class="slide-button">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="image-list">
+                    <img src="img/responsive-image-slider-images/img-1.jpg" alt="img-1" class="image-item">
+                    <img src="img/responsive-image-slider-images/img-2.jpg" alt="img-1" class="image-item">
+                    <img src="img/responsive-image-slider-images/img-3.jpg" alt="img-1" class="image-item">
+                    <img src="img/responsive-image-slider-images/img-4.jpg" alt="img-1" class="image-item">
+                    <img src="img/responsive-image-slider-images/img-5.jpg" alt="img-1" class="image-item">
+                    <img src="img/responsive-image-slider-images/img-6.jpg" alt="img-1" class="image-item">
+                    <img src="img/responsive-image-slider-images/img-7.jpg" alt="img-1" class="image-item">
+                    <img src="img/responsive-image-slider-images/img-8.jpg" alt="img-1" class="image-item">
+                    <img src="img/responsive-image-slider-images/img-9.jpg" alt="img-1" class="image-item">
+                    <img src="img/responsive-image-slider-images/img-10.jpg" alt="img-1" class="image-item">
+                </div>
+                
+                <button id="next-slide" class="slide-button">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="slider-scrollbar">
+                <div class="scrollbar-track">
+                    <div class="scrollbar-thumb"> </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <section class="partner">
@@ -262,43 +299,11 @@
         </div>
     </section>
 
-    <div class="container-sliderprincipal">
-        <div class="container-slider">
-            <h2>Expertos en diseño de hogares</h2>
-            <p>En Maferco nos apasiona ayudar a nuestros clientes. Nos especializamos en el diseño y mantenimiento de
-                hogares, ofreciendo soluciones a medida para cada necesidad. Si tienes alguna pregunta o recomendación,
-                nuestro equipo de profesionales altamente capacitados estará encantado de brindarte el asesoramiento que
-                necesitas.
-            </p>
-            <div class="slider-wrapper">
-                <button id="prev-slide" class="slide-button">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="image-list">
-                    <img src="img/responsive-image-slider-images/img-1.jpg" alt="img-1" class="image-item">
-                    <img src="img/responsive-image-slider-images/img-2.jpg" alt="img-1" class="image-item">
-                    <img src="img/responsive-image-slider-images/img-3.jpg" alt="img-1" class="image-item">
-                    <img src="img/responsive-image-slider-images/img-4.jpg" alt="img-1" class="image-item">
-                    <img src="img/responsive-image-slider-images/img-5.jpg" alt="img-1" class="image-item">
-                    <img src="img/responsive-image-slider-images/img-6.jpg" alt="img-1" class="image-item">
-                    <img src="img/responsive-image-slider-images/img-7.jpg" alt="img-1" class="image-item">
-                    <img src="img/responsive-image-slider-images/img-8.jpg" alt="img-1" class="image-item">
-                    <img src="img/responsive-image-slider-images/img-9.jpg" alt="img-1" class="image-item">
-                    <img src="img/responsive-image-slider-images/img-10.jpg" alt="img-1" class="image-item">
-                </div>
-                
-                <button id="next-slide" class="slide-button">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-            <div class="slider-scrollbar">
-                <div class="scrollbar-track">
-                    <div class="scrollbar-thumb"> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <section class="grafico">
+        <h2>Aumento de clientes desde el día 1</h2>
+        <canvas id="grafico-categorias"></canvas>
+    </section>
+    
     <section class="compra">
         <div class="container">
             <h2>Compra Fácil y Rápida, ¡Directo a tu Puerta!</h2>
@@ -391,5 +396,7 @@
     <script src="js/carousel.js"></script>
     <script src="js/main.js"></script>
     <script src="js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+    <script src="js/chart.js"></script>
 </body>
 </html>

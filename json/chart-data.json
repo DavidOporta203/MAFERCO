@@ -1,0 +1,14 @@
+{
+    "labels": ["2021", "2022", "2023", "2024"],
+    "datasets": [{
+      "label": "Clientes",
+      "data": [1152, 2568, 4532, 8086],
+      "borderColor": "#002b38", 
+      "backgroundColor": "rgba(0, 43, 56, 0.2)",  
+      "borderWidth": 2,
+      "pointBackgroundColor": "#002b38", 
+      "pointRadius": 5,
+      "fill": true
+    }]
+  }
+  
