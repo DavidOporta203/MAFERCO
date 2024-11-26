@@ -103,23 +103,16 @@
         </div>
     </div>
 
-    <div class="products">
-        <div class="container">
-            <p>En nuestra ferretería, ofrecemos una amplia gama de productos y servicios diseñados para satisfacer todas
-                tus necesidades en construcción, reparación y mantenimiento. Contamos con herramientas de alta calidad,
-                materiales de construcción, artículos de plomería, electricidad, pintura, jardinería y mucho más. Ya
-                seas un profesional de la construcción o un entusiasta del bricolaje, encontrarás todo lo que necesitas
-                en un solo lugar.
-            </p>
-            <p>Nuestros servicios incluyen asesoría personalizada, corte de madera y metal a medida, duplicado de
-                llaves, y entregas a domicilio. Además, estamos comprometidos con ofrecerte las mejores marcas y
-                soluciones prácticas para cualquier proyecto, garantizando precios competitivos y atención experta.
-            </p>
-        </div>
+    <div class="filter">
+        <select id="categoryFilter">
+            <option value="todos">Todos</option>
+            <option value="Categoría A">Categoría A</option>
+            <option value="Categoría B">Categoría B</option>
+        </select>
+    </div>
 
-        <div class="product-container" id="product-container">
-            <!-- Carga dinámica de los productos -->
-        </div>
+    <div class="products">
+        <div class="product-container" id="productContainer"></div>
     </div>
 
     <footer class="footer">
@@ -170,30 +163,6 @@
             <p>&copy; 2024 Materiales Ferreteros La Costa - MAFERCO.<br>Todos los derechos reservados.<br>David Oporta & Andrés Castillo - UTN</p>
         </div>
     </footer>
-
-    <!-- Modal para Detalles del Producto -->
-    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <img id="modal-imagen" src="" alt="Imagen del Producto" class="img-fluid mb-3">
-                    <p class="mb-3"><strong>Identificador:</strong> <span id="modal-id"></span></p>
-                    <p class="mb-3"><strong>Nombre:</strong> <span id="modal-name"></span></p>
-                    <p class="mb-3"><strong>Descripción:</strong> <span id="modal-description"></span></p>
-                    <p class="mb-3"><strong>Precio:</strong> ₡<span id="modal-price"></span></p>
-                    <p class="mb-3"><strong>Categoría:</strong> <span id="modal-category"></span></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="js/products.js"></script>
     <script src="js/main.js"></script>

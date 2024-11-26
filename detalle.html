@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Detalle del Producto</h1>
+    <div class="producto-detalle">
+        <img id="imagenProducto" src="" alt="">
+        <h2 id="nombreProducto"></h2>
+        <p id="descripcionProducto"></p>
+        <p id="precioProducto"></p>
+    </div>
+    <button onclick="window.history.back()">Volver</button>
+
+    <script>
+        const productoSeleccionado = JSON.parse(localStorage.getItem('productoSeleccionado'));
+
+        if (productoSeleccionado) {
+            document.getElementById('imagenProducto').src = productoSeleccionado.imagen;
+            document.getElementById('nombreProducto').textContent = productoSeleccionado.nombre;
+            document.getElementById('descripcionProducto').textContent = productoSeleccionado.descripcion;
+            document.getElementById('precioProducto').textContent = `$${productoSeleccionado.precio.toFixed(2)}`;
+        } else {
+            document.body.innerHTML = '<h1>Producto no encontrado</h1>';
+        }
+    </script>
+    
+</body>
+</html>
