@@ -1,37 +1,59 @@
 
 /*El contenedor tiene ambos cards*/
 .contenedor-productos {
+    align-items: center;
     display: flex;
-    justify-content: space-between;  /* Espaciado entre los elementos */
-    margin-top: 3%;  
+    flex-direction: column;
+    margin-top: 10vh;  
 }
 
 .producto-pagar {
+    margin-bottom: 1%;
     margin-top: 4%;
     height: 20%;
     width: 30%;  
     margin-right: 4%;
-    justify-content: center;
-    text-align: center;
 }
 
 .producto-pagar .card {
-    padding: 15px; /* Espaciado dentro de la tarjeta */
-    border: 1px solid #ddd; /* Borde gris claro */
+    padding: 3vh; 
+    border: 1px solid #ddd; 
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor de la tarjeta */
     background-color: white; 
     max-width: 450px; /* Ancho máximo de la tarjeta */
-    margin: 0 auto; /* Centra la tarjeta */
+    margin: 0 auto; 
 }
 
-.card p{
-    line-height: 0.5;
+
+.parrafo p{
+    display: flex;            
+    justify-content: space-between; 
+    align-items: center;      
+    margin-bottom: 10px;     
+    font-size: 16px;    
+      
 }
 
-.card h3{
+
+.card h4{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
     line-height: 1;
+    font-weight: bold;
+    color: #000;
+    text-decoration: underline;
+    font-size: 18px;
+    margin-bottom: 20px; 
 }
+
+.precio {
+    display: inline-block;
+    font-weight: bold;
+    text-align: right; 
+ 
+  }
 
 .btn-pagar-carrito{
     margin-top: 2%;
@@ -40,22 +62,23 @@
     align-items: center;
     background-color: #355CC0;
     color: #fff;
-    height: 40px;
+    height: 45px;
     padding: 2%;
     border: none;
     transition: background-color 0.3s ease;
 }
 
 .btn-pagar-carrito:hover {
-    background-color: #333; /* Color al pasar el mouse */
+    background-color: #002B38; /* Color al pasar el mouse */
 }
 
 .producto-carrito {
-    width: 60%;  
-    margin-left: 3%;  
+    width: 70%;  
+    margin: 0;
     border: 1px solid #E2E2E2;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
 }
 
 .producto-carrito img{
@@ -64,13 +87,20 @@
     object-fit: cover;  
 }
 
+/* Estilos del table*/
+
 .table td{
     text-align: center;
     vertical-align: middle;
 }
 
+
 .table tr{
  text-align: center;
+}
+
+.table th{
+    background-color: #E2E2E2;
 }
 
 .btn-table{
@@ -84,7 +114,7 @@
     transition: background-color 0.3s ease;
 }
 .btn-table:hover {
-    background-color: #333; /* Color al pasar el mouse */
+    background-color: #002B38; /* Color al pasar el mouse */
 }
 .container-button{
     display: flex;
@@ -104,19 +134,24 @@
 }
 
 
+/* Estilos para el formulario de pago*/
+
 .form-group {
     margin-bottom: 20px;
 }
 
+.container-pago:hiden{
+  display: hidden;
+}
 .container-pago{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80vh;
     background-color: #ffff;
-    background: #333;
+    background: #EFEFEF;
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
     padding: 10px;
 }
 
@@ -125,7 +160,7 @@
     padding: 40px;
     background: #ffff;
     border-radius: 10px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra más difusa */
     align-items: center;
     margin: auto;
 }
@@ -181,17 +216,75 @@
     cursor: pointer;
 }
 
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	padding: 40px 20px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
-/* En pantallas pequeñas (móviles, hasta 767px) */
+
+
+
+@media screen and (max-width: 768px) {
+    .producto-carrito {
+        width: 100%;  
+        overflow-x: auto;  
+        -webkit-overflow-scrolling: touch;  
+    }
+
+    /* Tabla deslizable */
+    .table {
+        width: 100%;
+        min-width: 600px;  
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .producto-pagar {
+        width: 90%; 
+    }
+
+    .producto-carrito {
+        width: 100%; 
+    }
+
+    .producto-carrito img {
+        width: 60px; 
+        height: 60px;
+    }
+
+    .parrafo p {
+        font-size: 14px; 
+    }
+
+    .card h4 {
+        font-size: 16px; 
+    }
+
+    .btn-pagar-carrito {
+        height: 45px; 
+    }
+
+    .btn-table {
+        height: 35px; 
+    }
+}
+
 @media (max-width: 767px) {
     .container-pago form {
-        width: 100%; /* El formulario ocupará el 100% del ancho en dispositivos pequeños */
-        padding: 20px; /* Menos padding en dispositivos pequeños */
+        width: 100%; 
+        padding: 20px; 
     }
 
     .row {
         flex-direction: column; 
-        gap: 10px; /* Reducir espacio entre las columnas */
+        gap: 10px; 
     }
 
     .column {
@@ -200,7 +293,7 @@
 
     .column .title {
         font-size: 18px; 
-        text-align: center; /* Centrar los títulos en dispositivos pequeños */
+        text-align: center; 
     }
 
     .input-box input {
@@ -211,3 +304,6 @@
         font-size: 16px; 
     }
 }
+
+
+
