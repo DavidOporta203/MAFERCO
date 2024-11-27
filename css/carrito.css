@@ -4,13 +4,13 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 10vh;  
+    margin-top: 8vh;  
 }
 
 .producto-pagar {
     display: grid;
     margin-bottom: 1%;
-    margin-top: 4%;
+    margin-top: 2%;
     grid-template-columns: 1fr;  
     width: 100%;  
     max-width: 450px; 
@@ -132,6 +132,119 @@
     color: #fff;
     cursor: pointer;
     line-height: 1.2;
+}
+
+/*Estilos para los botones abajo del banner*/
+
+.banner-botones{
+    margin-top: 3vh;
+    background: #E2E2E2;
+    width: 100%;
+    height: 15vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.button{
+    width: 270px;
+    height: 70px;
+    outline: none;
+    border: none;
+    background-color: #002B38;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    font-weight: 700;
+    transition: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    position: relative;
+}
+
+button span.icon-btn{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    left: 50px;
+    top: 18px;
+    transition: .5s ease-in-out;
+}
+button span.text{
+    position: absolute;
+    right: 40px;
+    top: 22px;
+    transform-origin: top right;
+    transition: .3s .2s ease-in-out;
+}
+
+.top-btn{
+    width: 30px;
+    height: 5px;
+    background-color: #355CC0;
+    border-radius: 5px;
+    position: relative;
+    transform-origin: bottom left;
+    transition: .5s ease-in-out;
+}
+
+.top-btn::after{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: #355CC0;
+    width: 15px;
+    height: 2px;
+    border: 2px solid #355CC0;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-btn{
+    margin-top: 3px;
+    width: 20px;
+    border-top: 30px solid #355CC0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 2px 2px 10px 10px;
+    position: relative;
+    transform-origin: top left;
+    transition: .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+button:hover .top-btn{
+    transform: rotateZ(-25deg);
+}
+
+button:hover .text{
+    
+    transform: rotateZ(-15deg) scale(0.5) translate(-120px , -50px);
+}
+
+button:hover .icon-btn{
+    transform: translate(70px, 30px) scale(2.5);
+}
+
+
+button:focus .top-btn{
+    transform: rotateZ(0deg);
+}
+
+button:focus .icon-btn{
+    transform: translate(70px, 0px) scale(1);
+}
+
+button:focus .text{
+    transform: rotateZ(-2deg) scale(0.3) translate(-270px, 10px);
+    opacity: 0;
+}
+
+button:not(:hover):not(:focus) .text {
+    opacity: 1;
+    transform: translate(0, 0) scale(1); /* Regresar al tamaño y posición originales */
 }
 
 

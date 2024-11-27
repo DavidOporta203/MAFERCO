@@ -179,8 +179,15 @@ $(document).on('change', '.cantidad', function() {
     const id = $(this).data('id');
     carrito = carrito.filter(item => item.id !== id);
 
-    // Actualizar la tabla y los totales
     actualizarCarrito();
+});
+
+
+$(document).on('click', '#button-borrar', function(){
+    carrito = []; // Vaciar el carrito en la variable local
+    localStorage.removeItem('carrito'); // Eliminar el carrito de localStorage
+    actualizarCarrito(); // Actualizar la vista del carrito
+    console.log(carrito);
 });
 
 
