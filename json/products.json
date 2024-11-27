@@ -4,7 +4,7 @@
       "nombre": "Esmeriladora Angular Bosch",
       "descripcion": "Esmeriladora angular Bosch 4 1/2 eje 5/8 710W",
       "imagen": "../img/products/Esmeriladora Angular Eje 5-8 710w.jpeg",
-      "precio": 99999.99,
+      "precio": 150.00,
       "categoria": "Categoría A"
     },
     {
@@ -12,7 +12,7 @@
       "nombre": "Esmeriladora Angular Total",
       "descripcion": "Esmeriladora angular Total 4 1/2 950W",
       "imagen": "img/products/Esmeriladora Angular Total.jpeg",
-      "precio": 99999.99,
+      "precio": 150.00,
       "categoria": "Categoría B"
     },
     {
@@ -20,7 +20,7 @@
       "nombre": "Hidrolavadora F&G",
       "descripcion": "Hidrolavadora F&G 1885PSI 1600H H 6130M",
       "imagen": "img/products/Hidrolavadora ForesGarden.jpeg",
-      "precio": 99999.99,
+      "precio": 150.00,
       "categoria": "Categoría B"
     },
     {
@@ -28,7 +28,7 @@
       "nombre": "Lijadora Neo",
       "descripcion": "Lijadora Orb Neo 4.1/2 250W LO 913",
       "imagen": "img/products/Lijadora Orb Neo.jpeg",
-      "precio": 99999.99,
+      "precio": 150.00,
       "categoria": "Categoría A"
     },
     {
@@ -36,7 +36,7 @@
       "nombre": "Lijadora DeWalt",
       "descripcion": "Lijadora palma 1/4 DWE6411-B3",
       "imagen": "img/products/Lijadora palma DeWalt.jpeg",
-      "precio": 99999.99,
+      "precio": 150.00,
       "categoria": "Categoría B"
     },
     {
@@ -44,7 +44,7 @@
       "nombre": "Mezcladora Total",
       "descripcion": "Mezcladora Total 1400W UTD614006",
       "imagen": "img/products/Mezcladora Total 1400w.jpeg",
-      "precio": 99999.99,
+      "precio": 150.00,
       "categoria": "Categoría A"
     }, 
     {
@@ -52,7 +52,7 @@
       "nombre": "Pistola Calor Total",
       "descripcion": "Pistola calor Total 2000W UTB20036",
       "imagen": "img/products/Pistola calor total 2000w.jpeg",
-      "precio": 99999.99,
+      "precio": 150.00,
       "categoria": "Categoría B"
     },
     {
@@ -60,7 +60,7 @@
       "nombre": "Pistola Pintar Gladiator",
       "descripcion": "Pistola para pintar Gladiator recargable HVR 818/18",
       "imagen": "img/products/Pistola pintar Gladiator.jpeg",
-      "precio": 99999.99,
+      "precio": 150.00,
       "categoria": "Categoría A"
     }
   ]
