@@ -15,11 +15,49 @@ h1 {
     margin-bottom: 25px;
 }
 
-.filter {
+/* .filter {
     position: absolute;
     right: 50px;
     top: 400px;
 }
+
+.dropdown {
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    .filter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        right: auto;
+    }
+} */
+
+.filter {
+    position: absolute;
+    right: auto;
+    top: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.dropdown {
+    margin-top: 20px;
+    width: 50%;
+}
+
+select {
+    
+}
+
+
 
 .products{
     padding-top: 100px;
