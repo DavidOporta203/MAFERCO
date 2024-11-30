@@ -4,64 +4,152 @@
       "nombre": "Esmeriladora Angular Bosch",
       "descripcion": "Esmeriladora angular Bosch 4 1/2 eje 5/8 710W",
       "imagen": "../img/products/Esmeriladora Angular Eje 5-8 710w.jpeg",
-      "precio": 150.00,
-      "categoria": "Categoría A"
+      "precio": 59474.37,
+      "categoria": "Herramientas eléctricas"
     },
     {
       "id": 2,
       "nombre": "Esmeriladora Angular Total",
       "descripcion": "Esmeriladora angular Total 4 1/2 950W",
       "imagen": "img/products/Esmeriladora Angular Total.jpeg",
-      "precio": 150.00,
-      "categoria": "Categoría B"
+      "precio": 42000,
+      "categoria": "Herramientas eléctricas"
     },
     {
       "id": 3,
       "nombre": "Hidrolavadora F&G",
       "descripcion": "Hidrolavadora F&G 1885PSI 1600H H 6130M",
       "imagen": "img/products/Hidrolavadora ForesGarden.jpeg",
-      "precio": 150.00,
-      "categoria": "Categoría B"
+      "precio": 70500,
+      "categoria": "Jardinería y exteriores"
     },
     {
       "id": 4,
       "nombre": "Lijadora Neo",
       "descripcion": "Lijadora Orb Neo 4.1/2 250W LO 913",
       "imagen": "img/products/Lijadora Orb Neo.jpeg",
-      "precio": 150.00,
-      "categoria": "Categoría A"
+      "precio": 25350,
+      "categoria": "Herramientas eléctricas"
     },
     {
       "id": 5,
       "nombre": "Lijadora DeWalt",
       "descripcion": "Lijadora palma 1/4 DWE6411-B3",
       "imagen": "img/products/Lijadora palma DeWalt.jpeg",
-      "precio": 150.00,
-      "categoria": "Categoría B"
+      "precio": 50932.70,
+      "categoria": "Herramientas eléctricas"
     },
     {
       "id": 6,
       "nombre": "Mezcladora Total",
       "descripcion": "Mezcladora Total 1400W UTD614006",
       "imagen": "img/products/Mezcladora Total 1400w.jpeg",
-      "precio": 150.00,
-      "categoria": "Categoría A"
+      "precio": 61247.01,
+      "categoria": "Herramientas eléctricas"
     }, 
     {
       "id": 7,
       "nombre": "Pistola Calor Total",
       "descripcion": "Pistola calor Total 2000W UTB20036",
       "imagen": "img/products/Pistola calor total 2000w.jpeg",
-      "precio": 150.00,
-      "categoria": "Categoría B"
+      "precio": 24405,
+      "categoria": "Herramientas eléctricas"
     },
     {
       "id": 8,
       "nombre": "Pistola Pintar Gladiator",
       "descripcion": "Pistola para pintar Gladiator recargable HVR 818/18",
       "imagen": "img/products/Pistola pintar Gladiator.jpeg",
-      "precio": 150.00,
-      "categoria": "Categoría A"
-    }
+      "precio": 50000,
+      "categoria": "Herramientas eléctricas"
+    }, 
+    {
+      "id": 9,
+      "nombre": "Sierra Caladora DeWalt",
+      "descripcion": "Sierra caladora DeWalt 4.5A 500W",
+      "imagen": "img/products/Sierra caladora DeWalt.jpeg",
+      "precio": 86243.05,
+      "categoria": "Herramientas eléctricas"
+    },
+    {
+      "id": 10,
+      "nombre": "Sierra Circular DeWalt",
+      "descripcion": "Sierra circular DeWalt 7.1/4 1400W",
+      "imagen": "img/products/Sierra circular DeWalt 7.1-4 1400w.jpeg",
+      "precio": 58765.64,
+      "categoria": "Herramientas eléctricas"
+		},
+    {
+      "id": 11,
+      "nombre": "Sierra Circular Makita",
+      "descripcion": "Sierra circular Makita 185MM",
+      "imagen": "img/products/Sierra circular Makita 185mm.jpeg",
+      "precio": 50593.95,
+      "categoria": "Herramientas eléctricas"
+		},
+    {
+      "id": 12,
+      "nombre": "Sopladora y Aspirador Makita",
+      "descripcion": "Sopladora y Aspirador Makita",
+      "imagen": "img/products/Sopladora y aspiradora Makita.jpeg",
+      "precio": 66285.80,
+      "categoria": "Jardinería y exteriores"
+		},
+    {
+      "id": 13,
+      "nombre": "Taladro Bosch",
+      "descripcion": "Taladro percutor 1/2 GSB1 RE Bosch",
+      "imagen": "img/products/Taladro de impacto Bosch.jpeg",
+      "precio": 57950,
+      "categoria": "Herramientas eléctricas"
+		},
+    {
+      "id": 14,
+      "nombre": "Taladro Neo",
+      "descripcion": "Taladro Neo Inal 1/2 20X TP 1030/1/20 K1",
+      "imagen": "img/products/Taladro Neo Inal.jpeg",
+      "precio": 25406,
+      "categoria": "Herramientas eléctricas"
+		},
+    {
+      "id": 15,
+      "nombre": "Taladro Percutador Gladiator",
+      "descripcion": "Taladro percutador 1/2 Gladiator",
+      "imagen": "img/products/Taladro percutor Gladiator.jpeg",
+      "precio": 14800.50,
+      "categoria": "Herramientas eléctricas"
+		},
+    {
+      "id": 16,
+      "nombre": "Pintura Glidden",
+      "descripcion": "Pintura Gldden Premium 1 galón",
+      "imagen": "img/products/Pintura Glidden.jpg",
+      "precio": 18900,
+      "categoria": "Pintura"
+		},
+    {
+      "id": 17,
+      "nombre": "Pintura Lanco Maxima",
+      "descripcion": "Pintura Lanco Máxima Premium Satinada Deep 1/4",
+      "imagen": "img/products/Pintura Lanco.jpg",
+      "precio": 23200,
+      "categoria": "Pintura"
+		},
+    {
+      "id": 18,
+      "nombre": "Concreto Multipropósito Laticrete",
+      "descripcion": "Concreto Multipropósito Laticrete 50 lb",
+      "imagen": "img/products/Concreto Laticrete.jpg",
+      "precio": 12635,
+      "categoria": "Construcción"
+		},
+    {
+      "id": 19,
+      "nombre": "Cemento Holcim",
+      "descripcion": "Cemento Holcim 50kg",
+      "imagen": "img/products/Cemento Holcim.jpg",
+      "precio": 14852,
+      "categoria": "Construcción"
+		}
   ]
   
