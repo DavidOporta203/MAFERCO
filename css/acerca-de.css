@@ -1,3 +1,4 @@
+/*-------------------- General -------------------- */
 .banner {
     background-color: #E7AD3B;
     height: 300px;
@@ -20,10 +21,9 @@ a {
     color: #424242;
 }
 
+/*-------------------- Developer -------------------- */
 
-
-
-
+/* David */
 .developer-container {
     width: 100%;
     display: flex;
@@ -41,18 +41,18 @@ a {
 .developer-image{
     background-image: url(../img/developer/picture.png);
     height: 600px;
+    width: 700px;
 
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 50%;
     aspect-ratio: 16/9;
 
     transition: transform 0.5s ease;
 }
 
 .developer-image:hover {
-    transform: scale(1.05); /* Aumenta el tamaño un 5% */
+    transform: scale(1.05);
 }
 
 .developer-text{
@@ -72,6 +72,53 @@ a {
     color: #2F56A1;
 }
 
+/* Andrés */
+.developer2-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+
+.developer2 {
+    background-color: #FFFFFF;
+    display: flex;
+}
+
+.developer2-image{
+    background-image: url(../img/developer/picture2.jpg);
+    height: 600px;
+    width: 700px;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 16/9;
+
+    transition: transform 0.5s ease;
+}
+
+.developer2-image:hover {
+    transform: scale(1.05);
+}
+
+.developer2-text{
+    width: 100%;
+    padding: 15px 50px 15px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.developer2-text h1{
+    font-size: 70px;
+    color: black;
+}
+
+.developer2-text p a:hover{
+    color: #2F56A1;
+}
 
 .utn {
     display: block; 
@@ -99,9 +146,9 @@ a {
         font-size: 80px;
     }
 
+    /* David */
     .developer-container {
         padding: 20px;
-
     }
 
     .developer {
@@ -128,5 +175,40 @@ a {
     .developer-text h1{
         font-size: 50px;
         color: black;
+    }
+
+    /* Andrés */
+    .developer2-container {
+        padding: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .developer2 {
+        width: 100%;
+    }
+
+    .developer2-image{
+        height: 600px;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .developer2-text{
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .developer2-text h1{
+        font-size: 50px;
+        color: black;
+    }
+
+    .texto {
+        margin-top: 50px;
     }
 }
