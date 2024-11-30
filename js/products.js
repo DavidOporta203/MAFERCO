@@ -401,15 +401,55 @@ function completarPago(){
     document.getElementById('btn-finalizar').addEventListener('click', function(event) {
         event.preventDefault(); // Evita que se recargue la página al hacer clic en el botón
 
-    
-        // Mostrar mensaje de confirmación del pago usando SweetAlert
+
+        // Hacemos las validaciones de los datos de entrada
+
+        const cardNumber = document.getElementById('card-number').value;
+        const name = document. getElementById('card-name-input').value;
+        const correo = document.getElementById('card-email').value;
+        const fechaExpiracion = document.getElementById('validity-input').value;
+        const codigoCVV = document.getElementById('cvv').value;
+
+        const selectedDate = new Date(fechaExpiracion);
+        const cardNumberLength = cardNumber.length;
+        const today = new Date();
+
+        if (!cardNumber || !name || !correo || !fechaExpiracion || !codigoCVV) {
+            Swal.fire({
+                icon: "error",
+                title: "Atención",
+                text: "Porfavor rellene todos los campos",
+              });
+            return false;
+        }
+
+        if (cardNumberLength < 13 || cardNumberLength > 16) {
+            Swal.fire({
+                icon: "error",
+                title: "Atención",
+                text: "El número de tarjeta debe estar entre 13 y 16 dígitos",
+              });
+            return false;
+        }
+        if (selectedDate < today) {
+            Swal.fire({
+                icon: "error",
+                title: "Atención",
+                text: "La fecha de expiración no puede ser menor al día actual",
+              });
+            return false;
+        }
+
+
         Swal.fire({
+            //Si se cumplen todas las condiciones muestra el modal Swal, para confirmar
             title: '¿Estás seguro de realizar el pago?',
-            text: "¡Una vez realizado, el carrito se vaciará!",
+            text: "¡Una vez realizado, se procesará el pago!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sí, proceder con el pago',
-            cancelButtonText: 'Cancelar'
+            cancelButtonText: 'Cancelar',
+
         }).then((result) => {
             if (result.isConfirmed) {
                 // Simular el pago
