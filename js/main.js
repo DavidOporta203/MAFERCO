@@ -59,24 +59,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-
-//Listener para realizar animación del apartado products
-window.addEventListener('scroll', () => {
-    const productItems = document.querySelectorAll('.product-item');
-
-    productItems.forEach(productItem => {
-        const rect = productItem.getBoundingClientRect();
-
-        // Verifica si el elemento está en la vista
-        if (rect.top < window.innerHeight && rect.bottom >= 0) {
-            productItem.classList.add('active');
-        } else {
-            productItem.classList.remove('active');
-        }
-    });
-});
-
-
 //Este efecto se aplica a la sección de pagos
 window.addEventListener('DOMContentLoaded', function() {
     // Obtener todos los elementos que quieres animar

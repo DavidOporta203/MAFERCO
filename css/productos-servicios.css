@@ -1,3 +1,4 @@
+/*-------------------- Generales -------------------- */
 .banner {
     background-color: #E7AD3B;
     height: 300px;
@@ -15,26 +16,12 @@ h1 {
     margin-bottom: 25px;
 }
 
-/* .filter {
-    position: absolute;
-    right: 50px;
-    top: 400px;
-}
-
-.dropdown {
+/*-------------------- Select -------------------- */
+label {
+    margin-right: 20px;
     margin-top: 20px;
+    font-size: 20px;
 }
-
-@media (max-width: 1000px) {
-    .filter {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        right: auto;
-    }
-} */
 
 .filter {
     position: absolute;
@@ -51,14 +38,43 @@ h1 {
 .dropdown {
     margin-top: 20px;
     width: 50%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+
+    animation: dropdownAnimation 0.3s ease-out;
+    transform-origin: top;
 }
 
-select {
-    
+@keyframes dropdownAnimation {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
 }
 
+.dropdown:focus {
+    outline: none;
+    border: 1px solid #E7AD3B;
+    box-shadow: 0 0 8px rgba(231, 173, 59, 0.5);
+}
 
+.filter option {
+    padding: 10px;
+    font-size: 20px;
+    color: #333;
+    background-color: #fff;
+}
 
+/*-------------------- Products -------------------- */
 .products{
     padding-top: 100px;
     padding-bottom: 100px;
@@ -70,16 +86,6 @@ select {
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
-}
-
-.product-item.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.product-item:hover {
-    transform: scale(1.2);
-    transition: transform 0.5s;
 }
 
 .product-item {
@@ -94,10 +100,12 @@ select {
     margin: 50px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-    opacity: 0;
-    transform: scale(0.5);
     transition: opacity 1s ease, transform 1s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s;
 }
 
 .product-item img {
@@ -152,3 +160,17 @@ select {
         font-size: 80px;
     }
 }
+
+/*-------------------- Animaciones -------------------- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*-------------------- Animaciones -------------------- */

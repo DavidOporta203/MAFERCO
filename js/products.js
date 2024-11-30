@@ -42,11 +42,11 @@ function mostrarProductos(productos) {
     productos.forEach(product => {
         // Crear la tarjeta de producto
         const card = `
-            <div class="product-item">
+            <div class="product-item fade-in">
                 <img src="${product.imagen}" alt="${product.nombre}">
                 <div class="product-info">
-                    <p class="product-title">${product.nombre}</p>
-                    <p class="product-price">₡${product.precio.toFixed(2)}</p>
+                    <p class="product-title visible">${product.nombre}</p>
+                    <p class="product-price visible">₡${product.precio.toFixed(2)}</p>
                     <button class="product-button agregar" 
                             data-id="${product.id}" 
                             data-name="${product.nombre}" 
@@ -57,6 +57,14 @@ function mostrarProductos(productos) {
             </div>`;
         productContainer.insertAdjacentHTML('beforeend', card);
     });
+
+    // Agregar los productos con el efecto de fade-in
+    setTimeout(() => {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach((element) => {
+            element.classList.add('visible');
+        });
+    }, 100); // Ajusta el tiempo si es necesario para el retraso
 
     // Eventos para los botones "Ver más"
     const botonesVerMas = document.querySelectorAll('.product-button.ver');
