@@ -248,8 +248,14 @@ button:not(:hover):not(:focus) .text {
 }
 
 
-/* Estilos para el formulario de pago*/
+/*CSS para la selección de envío*/
 
+.container-envio{
+  margin-top: 2vh;
+  width: 50%;
+}
+
+/* Estilos para el formulario de pago*/
 
 .container-pago{
     visibility: hidden;
