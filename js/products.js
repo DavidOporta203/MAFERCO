@@ -3,6 +3,7 @@ let cardName = ""; // Variable para almacenar el nombre de la tarjeta
 let customerName = ""; // Variable para almacenar el nombre del cliente
 //It will store the elements inside the array, then it will be saved through localStorage to temporarily have it on Memory
 let carrito = [];
+let precioEnvio = 0;
 // Ruta al JSON de productos
 const rutaJSON = '/json/products.json';
 
@@ -81,16 +82,17 @@ function mostrarProductos(productos) {
     });
 }
 
+
+
+// Función para actualizar el carrito
 function actualizarCarrito() {
     const tbody = $('#cart-table-body');
     tbody.empty(); // Limpiar la tabla antes de renderizar
     let subtotal = 0;
 
     carrito.forEach(item => {
-
         const price = parseFloat(item.price);
         const quantity = parseInt(item.quantity);
-
         const totalProducto = price * quantity;
         subtotal += totalProducto;
 
@@ -114,15 +116,54 @@ function actualizarCarrito() {
     const descuento = subtotal > 50 ? 5 : 0;
     const total = subtotal + iva - descuento;
 
-    // Mostrar totales en el carrito
+    // Calcular el total con el precio del envío
+    const totalConEnvio = total + precioEnvio;
+
+    // Mostrar los totales en el carrito
     $('#subtotal').text(`₡${subtotal.toFixed(2)}`);
     $('#iva').text(`₡${iva.toFixed(2)}`);
     $('#descuento').text(`₡${descuento.toFixed(2)}`);
-    $('#total').text(`₡${total.toFixed(2)}`);
+    $('#envio').text(`₡${precioEnvio.toFixed(2)}`);
+    $('#total').text(`₡${totalConEnvio.toFixed(2)}`);
 
-    // Guardar el carrito actualizado en localStorage para ver si funka en memoria 
+    // Guardar el carrito actualizado en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
+
+
+
+// Función para manejar la selección del tipo de envío
+document.addEventListener("DOMContentLoaded", function() {
+    const tipoEnvioSelect = document.getElementById('tipo-envio');
+    
+    if (tipoEnvioSelect) {  
+        tipoEnvioSelect.addEventListener('change', function() {
+            const tipoEnvioSeleccionado = this.value;
+            switch (tipoEnvioSeleccionado) {
+                case 'standard':
+                    precioEnvio = 3200;
+                    break;
+                case 'rapido':
+                    precioEnvio = 4700;  
+                    break;
+                case 'express':
+                    precioEnvio = 8400;  
+                    break;
+                default:
+                    precioEnvio = 0;    
+                    break;
+            }
+
+            // Llamar a actualizarCarrito para recalcular el total
+            actualizarCarrito();
+        });
+    } else {
+        console.error("No se encontró el elemento con id 'tipo-envio'");
+    }
+});
+
+
+
 
 // Agregar productos al carrito
 $(document).on('click', '.agregar', function () {
@@ -174,6 +215,8 @@ $(document).on('click', '.agregar', function () {
 });
 
 
+
+
 // Actualizar cantidad de producto en el carrito
 $(document).on('change', '.cantidad', function () {
     const id = $(this).data('id');
@@ -185,6 +228,8 @@ $(document).on('change', '.cantidad', function () {
     actualizarCarrito();
 });
 
+
+
 // Eliminar producto del carrito
 $(document).on('click', '.eliminar', function () {
     const id = $(this).data('id');
@@ -192,6 +237,7 @@ $(document).on('click', '.eliminar', function () {
 
     actualizarCarrito();
 });
+
 
 //Se vuela todo el carrito
 $(document).on('click', '#button-borrar', function () {
@@ -210,6 +256,8 @@ $(document).ready(function () {
         actualizarCarrito(); // Actualizar la vista del carrito
     }
 });
+
+
 
 //Simula el formulario de pago, lo hace apacercer y que se mueva dinamicamente
 function simularPago() {
@@ -256,8 +304,6 @@ function simularPago() {
     const cvvInput = document.getElementById("cvv");
     const cvvDisplay = document.getElementById("cvv-display");
     let currentSpanIndex = 0;
-
-
 
     cardNumber.addEventListener("input", () => {
         const inputNumber = cardNumber.value.replace(/\D/g, "");
@@ -325,6 +371,10 @@ function simularPago() {
 }
 //carga el formulario, no tocar....
 window.onload = simularPago;
+
+
+
+
 
 
 //Generamos el PDF al presionar el boton pagar
@@ -397,19 +447,61 @@ function generarPDFCompletarPago(){
     doc.save('factura_compra.pdf');
 }
 
+
+
+
+
 function completarPago(){
     document.getElementById('btn-finalizar').addEventListener('click', function(event) {
         event.preventDefault(); // Evita que se recargue la página al hacer clic en el botón
+        // Hacemos las validaciones de los datos de entrada
 
-    
-        // Mostrar mensaje de confirmación del pago usando SweetAlert
+        const cardNumber = document.getElementById('card-number').value;
+        const name = document. getElementById('card-name-input').value;
+        const correo = document.getElementById('card-email').value;
+        const fechaExpiracion = document.getElementById('validity-input').value;
+        const codigoCVV = document.getElementById('cvv').value;
+
+        const selectedDate = new Date(fechaExpiracion);
+        const cardNumberLength = cardNumber.length;
+        const today = new Date();
+
+        if (!cardNumber || !name || !correo || !fechaExpiracion || !codigoCVV) {
+            Swal.fire({
+                icon: "error",
+                title: "Atención",
+                text: "Porfavor rellene todos los campos",
+              });
+            return false;
+        }
+
+        if (cardNumberLength < 13 || cardNumberLength > 16) {
+            Swal.fire({
+                icon: "error",
+                title: "Atención",
+                text: "El número de tarjeta debe estar entre 13 y 16 dígitos",
+              });
+            return false;
+        }
+        if (selectedDate < today) {
+            Swal.fire({
+                icon: "error",
+                title: "Atención",
+                text: "La fecha de expiración no puede ser menor al día actual",
+              });
+            return false;
+        }
+
+
         Swal.fire({
+            //Si se cumplen todas las condiciones muestra el modal Swal, para confirmar
             title: '¿Estás seguro de realizar el pago?',
-            text: "¡Una vez realizado, el carrito se vaciará!",
+            text: "¡Una vez realizado, se procesará el pago!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonText: 'Sí, proceder con el pago',
-            cancelButtonText: 'Cancelar'
+            cancelButtonText: 'Cancelar',
+
         }).then((result) => {
             if (result.isConfirmed) {
                 // Simular el pago
