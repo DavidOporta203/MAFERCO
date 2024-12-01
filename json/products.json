@@ -5,7 +5,16 @@
       "descripcion": "Esmeriladora angular Bosch 4 1/2 eje 5/8 710W",
       "imagen": "../img/products/Esmeriladora Angular Eje 5-8 710w.jpeg",
       "precio": 59474.37,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 10,
+      "imagenes": [
+        "../img/products/Esmeriladora Angular Eje 5-8 710w.jpeg",
+        "../img/products/Esmeriladora Angular Eje 5-8 710w 2.png",
+        "../img/products/Esmeriladora Angular Eje 5-8 710w 3.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 3
     },
     {
       "id": 2,
@@ -13,7 +22,15 @@
       "descripcion": "Esmeriladora angular Total 4 1/2 950W",
       "imagen": "img/products/Esmeriladora Angular Total.jpeg",
       "precio": 42000,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 13,
+      "imagenes": [
+        "img/products/Esmeriladora Angular Total.jpeg",
+        "img/products/Esmeriladora Angular Total 2.webp"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
     },
     {
       "id": 3,
@@ -21,7 +38,15 @@
       "descripcion": "Hidrolavadora F&G 1885PSI 1600H H 6130M",
       "imagen": "img/products/Hidrolavadora ForesGarden.jpeg",
       "precio": 70500,
-      "categoria": "Jardinería y exteriores"
+      "categoria": "Jardinería y exteriores",
+
+      "stock": 13,
+      "imagenes": [
+        "img/products/Hidrolavadora ForesGarden.jpeg",
+        "img/products/Hidrolavadora ForesGarden 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
     },
     {
       "id": 4,
@@ -29,7 +54,15 @@
       "descripcion": "Lijadora Orb Neo 4.1/2 250W LO 913",
       "imagen": "img/products/Lijadora Orb Neo.jpeg",
       "precio": 25350,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 15,
+      "imagenes": [
+        "img/products/Lijadora Orb Neo.jpeg",
+        "img/products/Lijadora Orb Neo 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
     },
     {
       "id": 5,
@@ -37,7 +70,15 @@
       "descripcion": "Lijadora palma 1/4 DWE6411-B3",
       "imagen": "img/products/Lijadora palma DeWalt.jpeg",
       "precio": 50932.70,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 15,
+      "imagenes": [
+        "img/products/Lijadora palma DeWalt.jpeg",
+        "img/products/Lijadora palma DeWalt 2.webp"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
     },
     {
       "id": 6,
@@ -45,7 +86,15 @@
       "descripcion": "Mezcladora Total 1400W UTD614006",
       "imagen": "img/products/Mezcladora Total 1400w.jpeg",
       "precio": 61247.01,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 13,
+      "imagenes": [
+        "img/products/Mezcladora Total 1400w.jpeg",
+        "img/products/Mezcladora Total 1400w 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
     }, 
     {
       "id": 7,
@@ -53,7 +102,15 @@
       "descripcion": "Pistola calor Total 2000W UTB20036",
       "imagen": "img/products/Pistola calor total 2000w.jpeg",
       "precio": 24405,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 26,
+      "imagenes": [
+        "img/products/Pistola calor total 2000w.jpeg",
+        "img/products/Pistola calor total 2000w 2.webp"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
     },
     {
       "id": 8,
@@ -61,7 +118,15 @@
       "descripcion": "Pistola para pintar Gladiator recargable HVR 818/18",
       "imagen": "img/products/Pistola pintar Gladiator.jpeg",
       "precio": 50000,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 13,
+      "imagenes": [
+        "img/products/Pistola pintar Gladiator.jpeg",
+        "img/products/Pistola pintar Gladiator 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
     }, 
     {
       "id": 9,
@@ -69,7 +134,15 @@
       "descripcion": "Sierra caladora DeWalt 4.5A 500W",
       "imagen": "img/products/Sierra caladora DeWalt.jpeg",
       "precio": 86243.05,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 18,
+      "imagenes": [
+        "img/products/Sierra caladora DeWalt.jpeg",
+        "img/products/Sierra caladora DeWalt 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
     },
     {
       "id": 10,
@@ -77,7 +150,15 @@
       "descripcion": "Sierra circular DeWalt 7.1/4 1400W",
       "imagen": "img/products/Sierra circular DeWalt 7.1-4 1400w.jpeg",
       "precio": 58765.64,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 48,
+      "imagenes": [
+        "img/products/Sierra circular DeWalt 7.1-4 1400w.jpeg",
+        "img/products/Sierra circular DeWalt 7.1-4 1400w 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		},
     {
       "id": 11,
@@ -85,7 +166,15 @@
       "descripcion": "Sierra circular Makita 185MM",
       "imagen": "img/products/Sierra circular Makita 185mm.jpeg",
       "precio": 50593.95,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 5,
+      "imagenes": [
+        "img/products/Sierra circular Makita 185mm.jpeg",
+        "img/products/Sierra circular Makita 185mm 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		},
     {
       "id": 12,
@@ -93,7 +182,15 @@
       "descripcion": "Sopladora y Aspirador Makita",
       "imagen": "img/products/Sopladora y aspiradora Makita.jpeg",
       "precio": 66285.80,
-      "categoria": "Jardinería y exteriores"
+      "categoria": "Jardinería y exteriores",
+
+      "stock": 13,
+      "imagenes": [
+        "img/products/Sopladora y aspiradora Makita.jpeg",
+        "img/products/Sopladora y aspiradora Makita 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		},
     {
       "id": 13,
@@ -101,7 +198,15 @@
       "descripcion": "Taladro percutor 1/2 GSB1 RE Bosch",
       "imagen": "img/products/Taladro de impacto Bosch.jpeg",
       "precio": 57950,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 18,
+      "imagenes": [
+        "img/products/Taladro de impacto Bosch.jpeg",
+        "img/products/Taladro de impacto Bosch 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		},
     {
       "id": 14,
@@ -109,7 +214,15 @@
       "descripcion": "Taladro Neo Inal 1/2 20X TP 1030/1/20 K1",
       "imagen": "img/products/Taladro Neo Inal.jpeg",
       "precio": 25406,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 13,
+      "imagenes": [
+        "img/products/Taladro Neo Inal.jpeg",
+        "img/products/Taladro Neo Inal 2.webp"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		},
     {
       "id": 15,
@@ -117,7 +230,15 @@
       "descripcion": "Taladro percutador 1/2 Gladiator",
       "imagen": "img/products/Taladro percutor Gladiator.jpeg",
       "precio": 14800.50,
-      "categoria": "Herramientas eléctricas"
+      "categoria": "Herramientas eléctricas",
+
+      "stock": 14,
+      "imagenes": [
+        "img/products/Taladro percutor Gladiator.jpeg",
+        "img/products/Taladro percutor Gladiator 2.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		},
     {
       "id": 16,
@@ -125,7 +246,15 @@
       "descripcion": "Pintura Gldden Premium 1 galón",
       "imagen": "img/products/Pintura Glidden.jpg",
       "precio": 18900,
-      "categoria": "Pintura"
+      "categoria": "Pintura",
+
+      "stock": 51,
+      "imagenes": [
+        "img/products/Pintura Glidden.jpg",
+        "img/products/Pintura Glidden.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		},
     {
       "id": 17,
@@ -133,7 +262,15 @@
       "descripcion": "Pintura Lanco Máxima Premium Satinada Deep 1/4",
       "imagen": "img/products/Pintura Lanco.jpg",
       "precio": 23200,
-      "categoria": "Pintura"
+      "categoria": "Pintura",
+
+      "stock": 29,
+      "imagenes": [
+        "img/products/Pintura Lanco.jpg",
+        "img/products/Pintura Lanco 2.webp"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		},
     {
       "id": 18,
@@ -141,7 +278,15 @@
       "descripcion": "Concreto Multipropósito Laticrete 50 lb",
       "imagen": "img/products/Concreto Laticrete.jpg",
       "precio": 12635,
-      "categoria": "Construcción"
+      "categoria": "Construcción",
+
+      "stock": 36,
+      "imagenes": [
+        "img/products/Concreto Laticrete.jpg",
+        "img/products/Concreto Laticrete.jpg"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		},
     {
       "id": 19,
@@ -149,7 +294,15 @@
       "descripcion": "Cemento Holcim 50kg",
       "imagen": "img/products/Cemento Holcim.jpg",
       "precio": 14852,
-      "categoria": "Construcción"
+      "categoria": "Construcción",
+
+      "stock": 151,
+      "imagenes": [
+        "img/products/Cemento Holcim.jpg",
+        "img/products/Cemento Holcim 2.webp"
+      ],
+      "garantia": "2 años de garantía",
+      "calificacion": 5
 		}
   ]
   

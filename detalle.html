@@ -1,33 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <meta name="description" content="Materiales Ferreteros La Costa - MAFERCO">
 
-    <h1>Detalle del Producto</h1>
-    <div class="producto-detalle">
-        <img id="imagenProducto" src="" alt="">
-        <h2 id="nombreProducto"></h2>
+    <title>Detalle</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/detalle.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <div class="menu-container">
+                <div class="menu" id="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="brand">
+                <span class="name">MAFERCO</span>
+            </div>
+        </div>
+        <div class="right">
+           
+                <a href="pago.html">
+                    <img src="img/iconos/carrito.svg" alt="Carrito de compras" class="icon" id="cart-icon">
+                </a>
+
+            <img src="img/iconos/usuario.svg" alt="Inicio de sesión" class="icon">
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <img src="img/iconos/inicio.svg" alt="Página de inicio">
+                        <span>Página de Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="nosotros.html">
+                        <img src="img/iconos/nosotros.svg" alt="Página nosotros">
+                        <span>Nosotros</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="productos-servicios.html" class="selected">
+                        <img src="img/iconos/productos.svg" alt="Página de productos y servicios">
+                        <span>Productos y servicios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html">
+                        <img src="img/iconos/blog.svg" alt="Página blog">
+                        <span>Blog</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contacto.html">
+                        <img src="img/iconos/contacto.svg" alt="Página contacto">
+                        <span>Contacto</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="preguntas-frecuentes.html">
+                        <img src="img/iconos/preguntas-frecuentes.svg" alt="Página preguntas frecuentes">
+                        <span>Preguntas frecuentes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="acerca-de.html">
+                        <img src="img/iconos/acerca-de.svg" alt="Página acerca de">
+                        <span>Acerca de</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <img src="img/iconos/log-out-svgrepo-com.png" alt="Cerrar sesión page">
+                        <span>Cerrar sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="flotante">
+        <div class="social-icons" id="socialIcons">
+            <a href="mailto:info@mafercocr.com?subject=Información&body=¡Hola! Me gustaría recibir información de sus productos."
+                target="_blank" class="flotantesContainer email">
+                <svg class="socialSvg" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z"
+                        fill="#080341" />
+                </svg>
+            </a>
+
+            <a href="https://www.facebook.com/MaterialesFerreterosLaCosta/" target="_blank"
+                class="flotantesContainer facebook">
+                <svg class="socialSvg" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H15V13.9999H17.0762C17.5066 13.9999 17.8887 13.7245 18.0249 13.3161L18.4679 11.9871C18.6298 11.5014 18.2683 10.9999 17.7564 10.9999H15V8.99992C15 8.49992 15.5 7.99992 16 7.99992H18C18.5523 7.99992 19 7.5522 19 6.99992V6.31393C19 5.99091 18.7937 5.7013 18.4813 5.61887C17.1705 5.27295 16 5.27295 16 5.27295C13.5 5.27295 12 6.99992 12 8.49992V10.9999H10C9.44772 10.9999 9 11.4476 9 11.9999V12.9999C9 13.5522 9.44771 13.9999 10 13.9999H12V21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z"
+                        fill="#0F0F0F" />
+                </svg>
+            </a>
+
+            <a href="https://www.instagram.com/ferreteriamaferco/" target="_blank" class="flotantesContainer instagram">
+                <svg class="socialSvg" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                    </path>
+                </svg>
+            </a>
+
+            <a href="tel:+50626539000" target="_blank" class="flotantesContainer telefono">
+                <svg class="socialSvg" viewBox="0 0 24 24">
+                    <path
+                        d="M15.5562 14.5477L15.1007 15.0272C15.1007 15.0272 14.0181 16.167 11.0631 13.0559C8.10812 9.94484 9.1907 8.80507 9.1907 8.80507L9.47752 8.50311C10.1841 7.75924 10.2507 6.56497 9.63424 5.6931L8.37326 3.90961C7.61028 2.8305 6.13596 2.68795 5.26145 3.60864L3.69185 5.26114C3.25823 5.71766 2.96765 6.30945 3.00289 6.96594C3.09304 8.64546 3.81071 12.259 7.81536 16.4752C12.0621 20.9462 16.0468 21.1239 17.6763 20.9631C18.1917 20.9122 18.6399 20.6343 19.0011 20.254L20.4217 18.7584C21.3806 17.7489 21.1102 16.0182 19.8833 15.312L17.9728 14.2123C17.1672 13.7486 16.1858 13.8848 15.5562 14.5477Z"
+                        fill="#1C274C" />
+                    <path
+                        d="M13.2595 1.87983C13.3257 1.47094 13.7122 1.19357 14.1211 1.25976C14.1464 1.26461 14.2279 1.27983 14.2705 1.28933C14.3559 1.30834 14.4749 1.33759 14.6233 1.38082C14.9201 1.46726 15.3347 1.60967 15.8323 1.8378C16.8286 2.29456 18.1544 3.09356 19.5302 4.46936C20.906 5.84516 21.705 7.17097 22.1617 8.16725C22.3899 8.66487 22.5323 9.07947 22.6187 9.37625C22.6619 9.52466 22.6912 9.64369 22.7102 9.72901C22.7197 9.77168 22.7267 9.80594 22.7315 9.83125L22.7373 9.86245C22.8034 10.2713 22.5286 10.6739 22.1197 10.7401C21.712 10.8061 21.3279 10.53 21.2601 10.1231C21.258 10.1121 21.2522 10.0828 21.2461 10.0551C21.2337 9.9997 21.2124 9.91188 21.1786 9.79572C21.1109 9.56339 20.9934 9.21806 20.7982 8.79238C20.4084 7.94207 19.7074 6.76789 18.4695 5.53002C17.2317 4.29216 16.0575 3.59117 15.2072 3.20134C14.7815 3.00618 14.4362 2.88865 14.2038 2.82097C14.0877 2.78714 13.9417 2.75363 13.8863 2.7413C13.4793 2.67347 13.1935 2.28755 13.2595 1.87983Z"
+                        fill="#1C274C" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M13.4857 5.3293C13.5995 4.93102 14.0146 4.7004 14.4129 4.81419L14.2069 5.53534C14.4129 4.81419 14.4129 4.81419 14.4129 4.81419L14.4144 4.81461L14.4159 4.81505L14.4192 4.81602L14.427 4.81834L14.4468 4.8245C14.4618 4.82932 14.4807 4.8356 14.5031 4.84357C14.548 4.85951 14.6074 4.88217 14.6802 4.91337C14.8259 4.97581 15.0249 5.07223 15.2695 5.21694C15.7589 5.50662 16.4271 5.9878 17.2121 6.77277C17.9971 7.55775 18.4782 8.22593 18.7679 8.7154C18.9126 8.95991 19.009 9.15897 19.0715 9.30466C19.1027 9.37746 19.1254 9.43682 19.1413 9.48173C19.1493 9.50418 19.1555 9.52301 19.1604 9.53809L19.1665 9.55788L19.1688 9.56563L19.1698 9.56896L19.1702 9.5705C19.1702 9.5705 19.1707 9.57194 18.4495 9.77798L19.1707 9.57194C19.2845 9.97021 19.0538 10.3853 18.6556 10.4991C18.2607 10.6119 17.8492 10.3862 17.7313 9.99413L17.7276 9.98335C17.7223 9.96832 17.7113 9.93874 17.6928 9.89554C17.6558 9.8092 17.5887 9.66797 17.4771 9.47938C17.2541 9.10264 16.8514 8.53339 16.1514 7.83343C15.4515 7.13348 14.8822 6.73078 14.5055 6.50781C14.3169 6.39619 14.1757 6.32909 14.0893 6.29209C14.0461 6.27358 14.0165 6.26254 14.0015 6.25721L13.9907 6.25352C13.5987 6.13564 13.3729 5.72419 13.4857 5.3293Z"
+                        fill="#1C274C" />
+                </svg>
+            </a>
+
+            <a href="https://wa.me/50689825000?text=¡Hola!%20Me%20gustaría%20recibir%20información%20de%20sus%20productos."
+                target="_blank" class="flotantesContainer whatsapp">
+                <svg class="socialSvg" viewBox="0 0 16 16">
+                    <path
+                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+
+        <div class="toggle-button" id="toggleButton">
+            <svg viewBox="0 0 24 24" class="add-icon">
+                <path d="M12 5v14m-7-7h14" stroke="white" stroke-width="2" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <h1>Detalle del producto</h1>
+        </div>
+    </div>
+
+    <div class="detalle">
+
+        <div class="carrusel" id="carruselProducto">
+            <div class="imagenesCarrusel" id="imagenesCarrusel"></div>
+            <button class="btnCarrusel left" id="prevBtn">❮</button>
+            <button class="btnCarrusel right" id="nextBtn">❯</button>
+        </div>
+
+        <p class="nombre" id="nombreProducto"></p>
         <p id="descripcionProducto"></p>
         <p id="precioProducto"></p>
+        <p id="categoriaProducto"></p>
+        <p id="stockProducto"></p>
+        <p id="garantiaProducto"></p>
+        <p><b>Reseña acerca del producto:</b></p>
+        <div id="escalaEstrellas" class="estrellas"></div>
+
+        <div class="buttons">
+            <!-- <button class="agregar">Agregar al carrito</button> -->
+
+            <button class="product-button agregar" 
+                            data-id="${product.id}" 
+                            data-name="${product.nombre}" 
+                            data-price="${product.precio}" 
+                            data-image="${product.imagen}">Agregar</button>
+            <button class="volver" onclick="window.history.back()">Volver</button>
+        </div>
     </div>
-    <button onclick="window.history.back()">Volver</button>
+
+    <footer class="footer">
+        <div class="footer-item">
+
+            <div class="box">
+                <h3>Contacto</h3>
+                <div class="contact">
+                    <div class="contact-item">
+                        <img src="img/iconos/telefono.png" alt="Icono de teléfono">
+                        <span class="medios-contacto">+506
+                            26539000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="img/iconos/whatsapp.png" alt="Icono de WhatsApp">
+                        <span class="medios-contacto">+506
+                            89825000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="img/iconos/correo.png" alt="Icono de correo electrónico">
+                        <span class="medios-contacto" style="margin-left: 5px;">info@mafercocr.com</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box">
+                <h3>Síguenos</h3>
+                <div class="socials">
+                    <a href="https://www.facebook.com/MaterialesFerreterosLaCosta/" target="_blank"><img
+                            src="img/iconos/facebook.png" alt="Enlace a Facebook"></a>
+                    <a href="https://www.instagram.com/ferreteriamaferco/" target="_blank"><img
+                            src="img/iconos/instagram.png" alt="Enlace a Instagram"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Ubicación</h3>
+                <p>150 metros al este de la bomba de Huacas, Guanacaste</p>
+
+                <a href="https://www.google.com/maps/place/MAFERCO/@10.1535928,-85.6342019,9z/data=!4m6!3m5!1s0x8f9e31c51eeaf041:0xa7167a04888ff225!8m2!3d10.3686119!4d-85.7652868!16s%2Fg%2F11s_t2xscb!5m1!1e2?entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D"
+                    class="btn-1" target="_blank">Ver en mapa
+                </a>
+            </div>
+
+        </div>
+        <hr>
+        <div class="rights">
+            <p>&copy; 2024 Materiales Ferreteros La Costa - MAFERCO.<br>Todos los derechos reservados.<br>David Oporta & Andrés Castillo - UTN</p>
+        </div>
+    </footer>
 
     <script>
         const productoSeleccionado = JSON.parse(localStorage.getItem('productoSeleccionado'));
 
         if (productoSeleccionado) {
-            document.getElementById('imagenProducto').src = productoSeleccionado.imagen;
-            document.getElementById('nombreProducto').textContent = productoSeleccionado.nombre;
-            document.getElementById('descripcionProducto').textContent = productoSeleccionado.descripcion;
-            document.getElementById('precioProducto').textContent = `$${productoSeleccionado.precio.toFixed(2)}`;
+            // Mostrar las imágenes en el carrusel
+            const imagenesCarrusel = document.getElementById('imagenesCarrusel');
+            productoSeleccionado.imagenes.forEach(imagen => {
+                const img = document.createElement('img');
+                img.src = imagen;
+                imagenesCarrusel.appendChild(img);
+            });
+
+            // Mostrar los detalles del producto
+            document.getElementById('nombreProducto').innerHTML = productoSeleccionado.nombre;
+            document.getElementById('precioProducto').innerHTML = `<b>Precio:</b> ₡${productoSeleccionado.precio.toFixed(2)}`;
+            document.getElementById('stockProducto').innerHTML = "<b>Unidades disponibles:</b> " + productoSeleccionado.stock;
+            document.getElementById('descripcionProducto').innerHTML = "<b>Descripción:</b> " + productoSeleccionado.descripcion;
+            document.getElementById('categoriaProducto').innerHTML = "<b>Categoría:</b> " + productoSeleccionado.categoria;
+            document.getElementById('garantiaProducto').innerHTML = "<b>Garantía:</b> " + productoSeleccionado.garantia;
+
+            // Añadir las estrellas según la calificación
+            const escalaEstrellas = document.getElementById('escalaEstrellas');
+            const calificacion = productoSeleccionado.calificacion || 0; // Asumir calificación 0 si no está definida
+            let estrellasHtml = '';
+
+            for (let i = 1; i <= 5; i++) {
+                if (i <= calificacion) {
+                    estrellasHtml += '<i class="fas fa-star"></i>'; // Estrella llena
+                } else {
+                    estrellasHtml += '<i class="far fa-star"></i>'; // Estrella vacía
+                }
+            }
+            escalaEstrellas.innerHTML = estrellasHtml;
+
+            // Llenar los atributos data-* del botón "Agregar"
+            const botonAgregar = document.querySelector('.product-button.agregar');
+            botonAgregar.setAttribute('data-id', productoSeleccionado.id);
+            botonAgregar.setAttribute('data-name', productoSeleccionado.nombre);
+            botonAgregar.setAttribute('data-price', productoSeleccionado.precio);
+            botonAgregar.setAttribute('data-image', productoSeleccionado.imagen);
+
+            // Lógica para el carrusel
+            let indexImagen = 0;
+            const imagenes = document.querySelectorAll('#imagenesCarrusel img');
+            const totalImagenes = imagenes.length;
+
+            // Función para actualizar la posición del carrusel
+            function actualizarCarrusel() {
+                const offset = -indexImagen * 100;  // Mueve el carrusel al siguiente índice
+                document.getElementById('imagenesCarrusel').style.transform = `translateX(${offset}%)`;
+            }
+
+            // Función para el botón siguiente
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                if (indexImagen < totalImagenes - 1) {
+                    indexImagen++;
+                } else {
+                    indexImagen = 0;
+                }
+                actualizarCarrusel();
+                resetIntervalo(); // Resetear el intervalo de cambio automático
+            });
+
+            // Función para el botón anterior
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                if (indexImagen > 0) {
+                    indexImagen--;
+                } else {
+                    indexImagen = totalImagenes - 1;
+                }
+                actualizarCarrusel();
+                resetIntervalo(); // Resetear el intervalo de cambio automático
+            });
+
+            // Cambiar imagen automáticamente cada 5 segundos
+            let intervalo = setInterval(siguienteImagen, 5000);
+
+            function siguienteImagen() {
+                if (indexImagen < totalImagenes - 1) {
+                    indexImagen++;
+                } else {
+                    indexImagen = 0;
+                }
+                actualizarCarrusel();
+            }
+
+            // Función para resetear el intervalo de cambio automático
+            function resetIntervalo() {
+                clearInterval(intervalo); // Detener el intervalo anterior
+                intervalo = setInterval(siguienteImagen, 5000); // Establecer un nuevo intervalo
+            }
+
         } else {
             document.body.innerHTML = '<h1>Producto no encontrado</h1>';
         }
     </script>
     
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

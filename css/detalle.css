@@ -1,0 +1,127 @@
+/*-------------------- Generales -------------------- */
+.banner {
+    background-color: #E7AD3B;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 0px;
+}
+
+h1 {
+    font-size: 100px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+.agregar {
+    padding: 13px 30px;
+    background-color: #E7AD3B;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    font-size: 20px;
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.agregar:hover {
+    background-color: #C88E2A;
+}
+
+.volver {
+    padding: 13px 30px;
+    background-color: #2F56A1;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    font-size: 20px;
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.volver:hover {
+    background-color: #2F4882;
+}
+
+/*-------------------- Detalle -------------------- */
+.detalle {
+    text-align: center;
+}
+
+.nombre {
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*-------------------- Carusel -------------------- */
+.carrusel {
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.imagenesCarrusel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.imagenesCarrusel img {
+    width: 100%;
+    height: auto;
+}
+
+.btnCarrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: black;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.btnCarrusel.left {
+    left: 10px;
+}
+
+.btnCarrusel.right {
+    right: 10px;
+}
+
+/*-------------------- Reseña -------------------- */
+.estrellas {
+    font-size: 24px;
+    color: #E7AD3B;
+    margin-bottom: 40px;
+}
+.estrella-vacia {
+    color: #ccc;
+}
+
+/*-------------------- Responsive -------------------- */
+@media (max-width: 600px){
+    h1 {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 800px){
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .agregar {
+        margin-right: 0;
+    }
+}
