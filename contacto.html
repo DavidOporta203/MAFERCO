@@ -172,11 +172,25 @@
 
     <div class="form-container">
         <section class="form">
-            <form action="https://formsubmit.co/letsbidonlineteam@gmail.com" method="POST">
-                <h3>Formulario</h3>
-                <input class="controls" type="text" name="name" placeholder="Ingrese su nombre" required>
+            <form id="contact-form" action="https://formsubmit.co/letsbidonlineteam@gmail.com" method="POST">
+                <h3>Formulario de Contacto</h3>
+
+                <input class="controls" type="text" name="name" placeholder="Ingrese su nombre completo" required>
+
                 <input class="controls" type="text" name="phone" placeholder="Ingrese su número telefónico" required>
+
                 <input class="controls" type="email" name="email" placeholder="Ingrese su correo electrónico" required>
+
+                <input class="controls" type="date" name="birthdate" required>
+
+                <fieldset class="controls">
+                    <legend>Género</legend>
+                    <div class="gender-selection">
+                        <label><input type="radio" name="gender" value="male" required> Masculino</label>
+                        <label><input type="radio" name="gender" value="female" required> Femenino</label>
+                        <label><input type="radio" name="gender" value="other" required> Otro</label>
+                    </div>
+                </fieldset>
 
                 <fieldset class="controls">
                     <legend>Preferencia de contacto</legend>
@@ -187,6 +201,15 @@
                             Correo</label>
                     </div>
                 </fieldset>
+
+                <textarea class="controls" name="address" placeholder="Ingrese su dirección" required></textarea>
+
+                <select class="controls" name="query_type" required>
+                    <option value="">Seleccione el tipo de consulta</option>
+                    <option value="sales">Consulta de ventas</option>
+                    <option value="support">Soporte técnico</option>
+                    <option value="general">Consulta general</option>
+                </select>
 
                 <input class="controls" type="text" name="request" id="request" placeholder="Ingrese su solicitud"
                     required>
@@ -204,21 +227,23 @@
 
     <footer class="footer">
         <div class="footer-item">
-            
+
             <div class="box">
                 <h3>Contacto</h3>
                 <div class="contact">
                     <div class="contact-item">
                         <img src="img/iconos/telefono.png" alt="Icono de teléfono">
-                        <span class="medios-contacto">+506 26539000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span class="medios-contacto">+506
+                            26539000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
                     <div class="contact-item">
                         <img src="img/iconos/whatsapp.png" alt="Icono de WhatsApp">
-                        <span class="medios-contacto">+506 89825000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span class="medios-contacto">+506
+                            89825000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
                     <div class="contact-item">
                         <img src="img/iconos/correo.png" alt="Icono de correo electrónico">
-                        <span  class="medios-contacto" style="margin-left: 5px;">info@mafercocr.com</span>
+                        <span class="medios-contacto" style="margin-left: 5px;">info@mafercocr.com</span>
                     </div>
                 </div>
 
@@ -242,14 +267,17 @@
                     class="btn-1" target="_blank">Ver en mapa
                 </a>
             </div>
-            
+
         </div>
         <hr>
         <div class="rights">
-            <p>&copy; 2024 Materiales Ferreteros La Costa - MAFERCO.<br>Todos los derechos reservados.<br>David Oporta & Andrés Castillo - UTN</p>
+            <p>&copy; 2024 Materiales Ferreteros La Costa - MAFERCO.<br>Todos los derechos reservados.<br>David Oporta &
+                Andrés Castillo - UTN</p>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+
 </body>
+
 </html>
