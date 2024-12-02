@@ -159,6 +159,7 @@ main {
 
 .contenedor-pregunta.activa .respuesta {
     opacity: 1;
+    max-height: 500px;
     margin-top: 20px;
 }
 
