@@ -460,13 +460,11 @@ function generarPDFCompletarPago(){
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-
     // Obtener el texto de la opción seleccionada
     const tipoEnvioTexto = tipoEnvioSelect.options[tipoEnvioSelect.selectedIndex].text;
 
     // Se asume que el formato del texto siempre sigue el patrón: "Tipo de envío: descripción: precio"
     const tipoEnvioMostrar = tipoEnvioTexto.split(':')[0] || 'No especificado';
-
 
     const now = new Date();
     const year = now.getFullYear();
@@ -479,36 +477,50 @@ function generarPDFCompletarPago(){
 
     const invoiceNumber = `${year}${month}${day}${hours}${minutes}${seconds}${milliseconds}`;
 
+    // Cargar imagen (asegurate de tener la ruta de la imagen)
+    const logoUrl = '../img/logo-with-background.png'; // Reemplaza por la URL o ruta del logo
+    const imgWidth = 40; // Ancho de la imagen
+    const imgHeight = 22; // Altura de la imagen
+
+    // Agregar la imagen en la esquina superior izquierda (por ejemplo)
+    doc.addImage(logoUrl, 'PNG', 14, 10, imgWidth, imgHeight);
+
     doc.setFontSize(20);
-    doc.setTextColor(0, 0, 255); // Color azul
+    doc.setTextColor(0, 43, 56); // Color azul oscuro
     doc.setFont("helvetica", "bold"); // Establecer fuente en negrita
     doc.text("Factura de Compra", 105, 20, null, null, 'center'); // Centrado horizontalmente
     doc.setTextColor(0, 0, 0); // Color negro
     doc.setFont("helvetica", "normal"); // Establecer fuente normal
     doc.setFontSize(12);
 
-
     // Agregar el número de factura
     doc.text(`Factura Número: ${invoiceNumber}`, 105, 30, null, null, 'center'); // Centrado horizontalmente
-// Verificar el nombre del cliente y asignar "Contado" si está vacío
-    console.log(customerName);
-
-    doc.text(`Nombre del Cliente: ${customerName.innerText}`, 14, 40); // Posición vertical después del número de factura
     
-      // Mostrar el tipo de envío seleccionado
-      let y = 50; // Posición vertical
-      doc.text(`Tipo de Envío: ${tipoEnvioMostrar}`, 15, y);
+    // Obtener el nombre del cliente (y reemplazar si es el valor por defecto)
+    const customerName = document.getElementById("card-holder-name").textContent.trim();
+    
+    // Verificar si el nombre del cliente es "Tu nombre aquí" o está vacío
+    let clienteNombre = customerName;
+    if (clienteNombre === "Tu nombre aquí" || clienteNombre === "") {
+        clienteNombre = "Contado";
+    }
+
+    doc.text(`Nombre del Cliente: ${clienteNombre}`, 14, 45); // Mostrar el nombre del cliente
+    
+    // Mostrar el tipo de envío seleccionado
+    let y = 55; // Posición vertical
+    doc.text(`Tipo de Envío: ${tipoEnvioMostrar}`, 14, y);
   
-      // Avanzamos la posición para la tabla de productos
-      y += 10;
+    // Avanzamos la posición para la tabla de productos
+    y += 10;
+
     // posición vertical inicial
     let total = 0;
 
     const tableWidth = 180;
     const rowHeight = 10;
 
-
-    doc.setFillColor(0, 123, 255); // Color azul
+    doc.setFillColor(78, 174, 206); // Color #4EAECE (Color azul claro)
     doc.rect(14, y, tableWidth, rowHeight, 'F'); // Fondo de la cabecera
     doc.setTextColor(255, 255, 255); // Texto blanco
     doc.text("Producto", 15, y + 7);
@@ -520,7 +532,6 @@ function generarPDFCompletarPago(){
 
     carrito.forEach(item =>{
         const subtotal = item.price * item.quantity;
-        doc.rect(14, y, tableWidth, rowHeight); // Bordes de la fila
         doc.text(item.name, 15, y + 7);
         doc.text(`$${item.price.toFixed(2)}`, 80, y + 7);
         doc.text(item.quantity.toString(), 120, y + 7);
@@ -528,7 +539,6 @@ function generarPDFCompletarPago(){
         y += rowHeight; // Incremento para la siguiente línea
         total += subtotal;
     });
-
 
     // Agregar el precio de envío y total después de la lista de productos
     doc.setFillColor(211, 211, 211); // Color gris
