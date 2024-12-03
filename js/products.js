@@ -1,9 +1,10 @@
 
 let cardName = ""; // Variable para almacenar el nombre de la tarjeta
-let customerName = ""; // Variable para almacenar el nombre del cliente
 //It will store the elements inside the array, then it will be saved through localStorage to temporarily have it on Memory
 let carrito = [];
 let precioEnvio = 0;
+const tipoEnvioSelect = document.getElementById('tipo-envio');
+const customerName = document.getElementById("card-holder-name");
 // Ruta al JSON de productos
 const rutaJSON = '/json/products.json';
 
@@ -102,7 +103,7 @@ function actualizarCarrito() {
                 <td><img src="${item.image}" alt="${item.name}" class="img-carrito"></td>
                 <td>${item.name}</td>
                 <td>
-                    <input class="form-control cantidad" type="number" value="${item.quantity}" min="1" data-id="${item.id}">
+                    <input class="form-control cantidad" type="number" value="${item.quantity}" min="0" data-id="${item.id}">
                     <button class="btn-table eliminar" data-id="${item.id}">Eliminar Artículo</button>
                 </td>
                 <td>₡${price.toFixed(2)}</td>
@@ -134,7 +135,6 @@ function actualizarCarrito() {
 
 // Función para manejar la selección del tipo de envío
 document.addEventListener("DOMContentLoaded", function() {
-    const tipoEnvioSelect = document.getElementById('tipo-envio');
     
     if (tipoEnvioSelect) {  
         tipoEnvioSelect.addEventListener('change', function() {
@@ -238,6 +238,24 @@ $(document).on('click', '.eliminar', function () {
     actualizarCarrito();
 });
 
+//Para eliminar el producto de la tabla cuando llegue a 0
+// Actualizar cantidad de producto en el carrito
+$(document).on('change', '.cantidad', function () {
+    const id = $(this).data('id');
+    const nuevaCantidad = parseInt($(this).val());
+    const producto = carrito.find(item => item.id === id);
+
+    if (producto) {
+        producto.quantity = nuevaCantidad;
+
+        // Si la cantidad es 0, eliminar el producto del carrito
+        if (producto.quantity === 0) {
+            carrito = carrito.filter(item => item.id !== id);
+        }
+    }
+    actualizarCarrito();
+});
+
 
 //Se vuela todo el carrito
 $(document).on('click', '#button-borrar', function () {
@@ -272,7 +290,7 @@ function simularPago() {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "No hay productos en el carrito pah",
+                text: "No hay productos en el carrito",
             });
             return;
         }
@@ -373,6 +391,51 @@ function simularPago() {
 window.onload = simularPago;
 
 
+function detectarTarjeta(numero) {
+    const tarjeta = numero.replace(/\s/g, '');  
+
+    // Verificar si la tarjeta comienza con un '4' (Visa)
+    if (tarjeta.startsWith('4')) {
+        return 'visa';  // Es Visa
+    }
+    // Verificar si la tarjeta comienza con un '5' (MasterCard) o con números en el rango 22-27
+    else if (tarjeta.startsWith('5') || (parseInt(tarjeta.substring(0, 2)) >= 22 && parseInt(tarjeta.substring(0, 2)) <= 27)) {
+        return 'mastercard';  // Es MasterCard
+    } else {
+        return 'desconocida';  // Si no es Visa ni MasterCard
+    }
+}
+
+
+//Aplicar un algoritmo para detectar el tipo de tarjeta
+document.getElementById('card-number').addEventListener('input', function(){
+    const cardNumber = this.value;
+    const visaIcon = document.getElementById('visa-icon');
+    const mastercardIcon = document.getElementById('mastercard-icon');
+
+    const tipo = detectarTarjeta(cardNumber);
+     
+    if(tipo === 'visa'){
+        visaIcon.style.display = 'inline';
+        document.getElementById('back-visa-icon').style.display = 'inline';
+        document.getElementById('back-mastercard-icon').style.display = 'none';
+    }
+    else{
+        if(tipo === 'mastercard'){
+            mastercardIcon.style.display = 'inline';
+            document.getElementById('back-mastercard-icon').style.display = 'inline';
+            document.getElementById('back-visa-icon').style.display = 'none';
+        }
+        else{
+            visaIcon.style.display = 'none';
+            mastercardIcon.style.display = 'none';
+            document.getElementById('back-visa-icon').style.display = 'none';
+            document.getElementById('back-mastercard-icon').style.display = 'none';
+        }
+    }
+
+});
+
 
 
 
@@ -381,6 +444,14 @@ window.onload = simularPago;
 function generarPDFCompletarPago(){
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
+
+
+    // Obtener el texto de la opción seleccionada
+    const tipoEnvioTexto = tipoEnvioSelect.options[tipoEnvioSelect.selectedIndex].text;
+
+    // Se asume que el formato del texto siempre sigue el patrón: "Tipo de envío: descripción: precio"
+    const tipoEnvioMostrar = tipoEnvioTexto.split(':')[0] || 'No especificado';
+
 
     const now = new Date();
     const year = now.getFullYear();
@@ -405,11 +476,17 @@ function generarPDFCompletarPago(){
     // Agregar el número de factura
     doc.text(`Factura Número: ${invoiceNumber}`, 105, 30, null, null, 'center'); // Centrado horizontalmente
 // Verificar el nombre del cliente y asignar "Contado" si está vacío
-    const customerNameDisplay = customerName.trim() === "" ? "Contado" : customerName;
+    console.log(customerName);
 
-    doc.text(`Nombre del Cliente: ${customerNameDisplay}`, 14, 40); // Posición vertical después del número de factura
-
-    let y = 45; // posición vertical inicial
+    doc.text(`Nombre del Cliente: ${customerName.innerText}`, 14, 40); // Posición vertical después del número de factura
+    
+      // Mostrar el tipo de envío seleccionado
+      let y = 50; // Posición vertical
+      doc.text(`Tipo de Envío: ${tipoEnvioMostrar}`, 15, y);
+  
+      // Avanzamos la posición para la tabla de productos
+      y += 10;
+    // posición vertical inicial
     let total = 0;
 
     const tableWidth = 180;
@@ -435,14 +512,25 @@ function generarPDFCompletarPago(){
         doc.text(`$${subtotal.toFixed(2)}`, 150, y + 7);
         y += rowHeight; // Incremento para la siguiente línea
         total += subtotal;
+    });
 
-        // Total
+
+    // Agregar el precio de envío y total después de la lista de productos
+    doc.setFillColor(211, 211, 211); // Color gris
+    doc.rect(14, y, tableWidth, rowHeight, 'F'); // Fondo del total
+    doc.setTextColor(0, 0, 0); // Texto negro
+    doc.text("Envío:", 15, y + 7);
+    doc.text(`$${precioEnvio.toFixed(2)}`, 150, y + 7);
+    y += rowHeight; // Incrementar la posición para la siguiente fila
+
+    // Total (Precio Total + Envío)
+    total += precioEnvio; // Agregar el precio de envío al total
     doc.setFillColor(211, 211, 211); // Color gris
     doc.rect(14, y, tableWidth, rowHeight, 'F'); // Fondo del total
     doc.setTextColor(0, 0, 0); // Texto negro
     doc.text("Total:", 15, y + 7);
     doc.text(`$${total.toFixed(2)}`, 150, y + 7);
-    });
+
 
     doc.save('factura_compra.pdf');
 }
