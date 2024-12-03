@@ -309,6 +309,21 @@ function simularPago() {
                 formulario.classList.add('show');
 
                 //Aún se está trabajando un formulario para pago por retiro en tienda
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                // Si el usuario elige "Retirar en tienda", mostrar la opción correspondiente
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Pago por Retiro en Tienda',
+                    text: 'Tu pago será procesado cuando llegues a la tienda. ¡Gracias por tu compra!',
+                });
+                generarPDFCompletarPago();
+                localStorage.removeItem('carrito'); // Eliminar el carrito del localStorage
+    
+                 carrito = [];
+                actualizarCarrito();
+                setTimeout(function() {
+                    window.location.href = "index.html"; // Redirige a la página de inicio después del pago
+                }, 2000);
             }
         });
     });
