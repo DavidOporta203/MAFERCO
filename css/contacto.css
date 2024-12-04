@@ -82,6 +82,17 @@ legend {
     background-color: #2F4882;
 }
 
+.map-container {
+    width: 100%;
+    background-color: #EFEFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+}
+
 @media (max-width: 600px){
 
     h1 {
