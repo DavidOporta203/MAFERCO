@@ -160,6 +160,29 @@ header {
     transition: width 0.5s ease;
 }
 
+
+/*Para el indicador del carrito*/
+.cart-container {
+    position: relative;
+    display: inline-block;
+  }
+  .cart-count {
+    position: absolute;
+    top: -7px;
+    right: -5px;
+    background-color: #002B38;
+    color: white;
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    min-width: 25px;
+    text-align: center;
+    height: 26px;
+  }
+  
+
+
 .sidebar ul {
     padding: 0;
 }
