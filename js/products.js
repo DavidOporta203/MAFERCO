@@ -1,6 +1,7 @@
 
 let cardName = ""; // Variable para almacenar el nombre de la tarjeta
 //It will store the elements inside the array, then it will be saved through localStorage to temporarily have it on Memory
+let cartCount =  0 // Variable que almacena el número de productos en el carrito
 let carrito = [];
 let precioEnvio = 0;
 const tipoEnvioSelect = document.getElementById('tipo-envio');
@@ -39,6 +40,8 @@ fetch(rutaJSON)
         });
     })
     .catch(error => console.error('Error cargando productos:', error));
+
+
 
 // Función para mostrar los productos
 function mostrarProductos(productos) {
@@ -126,6 +129,9 @@ function actualizarCarrito() {
     $('#descuento').text(`₡${descuento.toFixed(2)}`);
     $('#envio').text(`₡${precioEnvio.toFixed(2)}`);
     $('#total').text(`₡${totalConEnvio.toFixed(2)}`);
+    $('#cart-count').text(cartCount);
+    cartCount = carrito.reduce((total, item) => total + item.quantity, 0);
+    $('#cart-count').text(cartCount);
 
     // Guardar el carrito actualizado en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -161,8 +167,6 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("No se encontró el elemento con id 'tipo-envio'");
     }
 });
-
-
 
 
 // Agregar productos al carrito
@@ -225,6 +229,8 @@ $(document).on('change', '.cantidad', function () {
     if (producto) {
         producto.quantity = nuevaCantidad;
     }
+     $('#cart-count').text(cartCount);
+    cartCount = carrito.length -1;
     actualizarCarrito();
 });
 
@@ -234,9 +240,11 @@ $(document).on('change', '.cantidad', function () {
 $(document).on('click', '.eliminar', function () {
     const id = $(this).data('id');
     carrito = carrito.filter(item => item.id !== id);
-
+    cartCount = carrito.length;
     actualizarCarrito();
 });
+
+
 
 //Para eliminar el producto de la tabla cuando llegue a 0
 // Actualizar cantidad de producto en el carrito
@@ -263,6 +271,7 @@ $(document).on('click', '#button-borrar', function () {
     localStorage.removeItem('carrito'); // Eliminar el carrito de localStorage
     actualizarCarrito(); // Actualizar la vista del carrito
     console.log(carrito);
+    cartCount = carrito.length;
 });
 
 
@@ -559,6 +568,8 @@ function generarPDFCompletarPago(){
 
     doc.save('factura_compra.pdf');
 }
+
+//funcion para aumentar el indicador
 
 
 

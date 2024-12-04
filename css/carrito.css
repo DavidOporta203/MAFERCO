@@ -261,7 +261,6 @@ button:not(:hover):not(:focus) .text {
   width: 50%;
 }
 
-/* Estilos para el formulario de pago*/
 
 .container-pago{
     display: none;
